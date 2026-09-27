@@ -1,0 +1,4 @@
+RoboDojo https://github.com/RoboDojo-Benchmark/RoboDojo.git ee67a1468510da7624a089164402359f2afc72c8
++fa431ecd893ee706883e64fe5fe1464ec8cd928d XPolicyLab (v1.0.0-47-gfa431ec)
+ afca7b09d60d8beb9c1cb28b43066499940b969b third_party/IsaacLab (heads/main)
++895c6517243f8cb091c73c018c8167192d39599a third_party/curobo (heads/main)

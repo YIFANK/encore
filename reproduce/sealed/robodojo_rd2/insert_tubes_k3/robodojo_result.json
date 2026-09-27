@@ -1,0 +1,258 @@
+{
+ "dir": "/mnt/data/YifanKang/robodojo/RoboDojo/eval_result/RoboDojo/insert_tubes/Encore/arx_x5_encore/28955307_ckpt_name=encore,action_type=ee/2026-09-24_10-42-29_2117791",
+ "success_rate": 0.28,
+ "eval_time": 50,
+ "score": 48.39999999999998,
+ "details": {
+  "0": {
+   "layout_id": 0,
+   "success": false,
+   "score": 0.2
+  },
+  "1": {
+   "layout_id": 1,
+   "success": true,
+   "score": 1.0
+  },
+  "2": {
+   "layout_id": 2,
+   "success": false,
+   "score": 0.4
+  },
+  "3": {
+   "layout_id": 3,
+   "success": true,
+   "score": 1.0
+  },
+  "4": {
+   "layout_id": 4,
+   "success": false,
+   "score": 0.4
+  },
+  "5": {
+   "layout_id": 5,
+   "success": true,
+   "score": 1.0
+  },
+  "6": {
+   "layout_id": 6,
+   "success": false,
+   "score": 0.2
+  },
+  "7": {
+   "layout_id": 7,
+   "success": false,
+   "score": 0.4
+  },
+  "8": {
+   "layout_id": 8,
+   "success": true,
+   "score": 1.0
+  },
+  "9": {
+   "layout_id": 9,
+   "success": false,
+   "score": 0.2
+  },
+  "10": {
+   "layout_id": 10,
+   "success": false,
+   "score": 0.4
+  },
+  "11": {
+   "layout_id": 11,
+   "success": false,
+   "score": 0.2
+  },
+  "12": {
+   "layout_id": 12,
+   "success": true,
+   "score": 1.0
+  },
+  "13": {
+   "layout_id": 13,
+   "success": false,
+   "score": 0.4
+  },
+  "14": {
+   "layout_id": 14,
+   "success": true,
+   "score": 1.0
+  },
+  "15": {
+   "layout_id": 15,
+   "success": true,
+   "score": 1.0
+  },
+  "16": {
+   "layout_id": 16,
+   "success": false,
+   "score": 0.4
+  },
+  "17": {
+   "layout_id": 17,
+   "success": false,
+   "score": 0.2
+  },
+  "18": {
+   "layout_id": 18,
+   "success": false,
+   "score": 0.4
+  },
+  "19": {
+   "layout_id": 19,
+   "success": false,
+   "score": 0.2
+  },
+  "20": {
+   "layout_id": 20,
+   "success": false,
+   "score": 0.4
+  },
+  "21": {
+   "layout_id": 21,
+   "success": false,
+   "score": 0.4
+  },
+  "22": {
+   "layout_id": 22,
+   "success": false,
+   "score": 0.2
+  },
+  "23": {
+   "layout_id": 23,
+   "success": false,
+   "score": 0.2
+  },
+  "24": {
+   "layout_id": 24,
+   "success": false,
+   "score": 0.4
+  },
+  "25": {
+   "layout_id": 25,
+   "success": false,
+   "score": 0.2
+  },
+  "26": {
+   "layout_id": 26,
+   "success": true,
+   "score": 1.0
+  },
+  "27": {
+   "layout_id": 27,
+   "success": false,
+   "score": 0.4
+  },
+  "28": {
+   "layout_id": 28,
+   "success": false,
+   "score": 0.2
+  },
+  "29": {
+   "layout_id": 29,
+   "success": false,
+   "score": 0.4
+  },
+  "30": {
+   "layout_id": 30,
+   "success": false,
+   "score": 0.4
+  },
+  "31": {
+   "layout_id": 31,
+   "success": true,
+   "score": 1.0
+  },
+  "32": {
+   "layout_id": 32,
+   "success": false,
+   "score": 0.0
+  },
+  "33": {
+   "layout_id": 33,
+   "success": false,
+   "score": 0.4
+  },
+  "34": {
+   "layout_id": 34,
+   "success": true,
+   "score": 1.0
+  },
+  "35": {
+   "layout_id": 35,
+   "success": false,
+   "score": 0.2
+  },
+  "36": {
+   "layout_id": 36,
+   "success": false,
+   "score": 0.0
+  },
+  "37": {
+   "layout_id": 37,
+   "success": false,
+   "score": 0.2
+  },
+  "38": {
+   "layout_id": 38,
+   "success": true,
+   "score": 1.0
+  },
+  "39": {
+   "layout_id": 39,
+   "success": false,
+   "score": 0.4
+  },
+  "40": {
+   "layout_id": 40,
+   "success": false,
+   "score": 0.2
+  },
+  "41": {
+   "layout_id": 41,
+   "success": true,
+   "score": 1.0
+  },
+  "42": {
+   "layout_id": 42,
+   "success": true,
+   "score": 1.0
+  },
+  "43": {
+   "layout_id": 43,
+   "success": false,
+   "score": 0.4
+  },
+  "44": {
+   "layout_id": 44,
+   "success": false,
+   "score": 0.2
+  },
+  "45": {
+   "layout_id": 45,
+   "success": true,
+   "score": 1.0
+  },
+  "46": {
+   "layout_id": 46,
+   "success": false,
+   "score": 0.2
+  },
+  "47": {
+   "layout_id": 47,
+   "success": false,
+   "score": 0.4
+  },
+  "48": {
+   "layout_id": 48,
+   "success": false,
+   "score": 0.2
+  },
+  "49": {
+   "layout_id": 49,
+   "success": false,
+   "score": 0.2
+  }
+ }
+}

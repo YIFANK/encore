@@ -1,0 +1,17 @@
+LIBERO-PRO https://github.com/Zxy-MLlab/LIBERO-PRO.git eafdb809426b13153aa1e4c42d6601844217dfec
+?? libero/libero/bddl_files/libero_10_swap/
+?? libero/libero/bddl_files/libero_10_task/
+?? libero/libero/bddl_files/libero_goal_swap/
+?? libero/libero/bddl_files/libero_goal_task/
+?? libero/libero/bddl_files/libero_object_swap/
+?? libero/libero/bddl_files/libero_object_task/
+?? libero/libero/bddl_files/libero_spatial_swap/
+?? libero/libero/bddl_files/libero_spatial_task/
+?? libero/libero/init_files/libero_10_swap/
+?? libero/libero/init_files/libero_10_task/
+
+Heron venv: Python 3.10.12
+lrwxrwxrwx 1 YifanKang YifanKang 19 Jul 31 08:07 .venv/bin/python -> /usr/bin/python3.10
+dpofficial_venv
+kalm_baseline/LIBERO
+NVIDIA A100-SXM4-80GB, 580.159.03

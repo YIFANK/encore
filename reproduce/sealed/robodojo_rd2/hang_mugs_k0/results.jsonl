@@ -1,0 +1,20 @@
+{"episode": 1, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 500, "duration_s": 3401.4, "benchmark_success": false, "score": 0.0}
+{"episode": 2, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 508, "duration_s": 3123.1, "benchmark_success": false, "score": 0.0}
+{"episode": 3, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 600, "duration_s": 2977.2, "benchmark_success": false, "score": 0.15}
+{"episode": 4, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 648, "duration_s": 2797.8, "benchmark_success": false, "score": 0.0}
+{"episode": 5, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 549, "duration_s": 2620.3, "benchmark_success": false, "score": 0.0}
+{"episode": 6, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 788, "duration_s": 2457.0, "benchmark_success": false, "score": 0.0}
+{"episode": 7, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 558, "duration_s": 2233.2, "benchmark_success": false, "score": 0.0}
+{"episode": 8, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 515, "duration_s": 2065.5, "benchmark_success": false, "score": 0.0}
+{"episode": 9, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 548, "duration_s": 1916.3, "benchmark_success": false, "score": 0.0}
+{"episode": 10, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 442, "duration_s": 1742.9, "benchmark_success": false, "score": 0.0}
+{"episode": 11, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 410, "duration_s": 1613.4, "benchmark_success": false, "score": 0.0}
+{"episode": 12, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 779, "duration_s": 1471.7, "benchmark_success": false, "score": 0.0}
+{"episode": 13, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 615, "duration_s": 1251.0, "benchmark_success": false, "score": 0.0}
+{"episode": 14, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 775, "duration_s": 1079.5, "benchmark_success": false, "score": 0.0}
+{"episode": 15, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "sim_steps": 759, "duration_s": 872.0, "note": "", "program_error": "RuntimeError: fair-api move: EpisodeAborted: simulator stopped consuming actions (episode over?)", "benchmark_success": false, "score": 0.0}
+{"episode": 16, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 317, "duration_s": 621.7, "benchmark_success": false, "score": 0.0}
+{"episode": 17, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 407, "duration_s": 519.3, "benchmark_success": false, "score": 0.0}
+{"episode": 18, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 541, "duration_s": 394.2, "benchmark_success": false, "score": 0.0}
+{"episode": 19, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 439, "duration_s": 230.2, "benchmark_success": false, "score": 0.0}
+{"episode": 20, "program": "/mnt/data/YifanKang/Heron/packs/rd2_hang_mugs_k0/program.py", "note": "None", "sim_steps": 317, "duration_s": 91.3, "benchmark_success": false, "score": 0.0}

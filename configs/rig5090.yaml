@@ -1,0 +1,223 @@
+# cam_low restored 2026-08-04 after full replug; stable pair = high + low
+mode: real
+on_criterion: support
+arms:
+  left:
+    ip: 192.168.10.5
+    # Wrist-payload gravity-model extra: tried 0.14 (D405+mount) 2026-08-19,
+    # REVERTED 2026-08-20 — the follower FLOATS UP badly, i.e. the stock
+    # model already sits at/over the compensation margin and +140 g tips it
+    # clearly over. Reach droop is handled by wrist_refine instead.
+    ee_extra_mass_kg: 0.0
+    # Re-measured 2026-08-18: TWO independent fingertip grids (17 + 23
+    # pairs), ray-corrected planar Kabsch. cam_high depth reads the dark
+    # fingertips ~8 cm near, which poisons a free 6-DOF fit (it "found" a
+    # tilted base 11 cm off the table) -- so each sighting is re-projected
+    # along its camera ray onto the commanded fingertip height and the fit
+    # is constrained to yaw + translation. Both grids agree: yaw 182.9 deg,
+    # [0.917, 0.053]. The 2026-08-06 values (180.0 deg, [0.9309, 0.0553])
+    # mismatched the same pairs by 32 mm rms -- the base had drifted ~3 deg
+    # in yaw = 15-21 mm of lateral error at working radius, which is the
+    # "left grasps keep missing" bug. Raw pairs: calib/left_base_raw.npz.
+    t_world_base:
+      [[-0.99876, 0.04972, 0.0, 0.9171],
+      [-0.04972, -0.99876, 0.0, 0.0528],
+      [0.0, 0.0, 1.0, 0.0],
+      [0.0, 0.0, 0.0, 1.0]]
+  right:
+    ip: 192.168.10.4
+    ee_extra_mass_kg: 0.0
+    approach_rvec:
+    - 0.0
+    - 1.5708
+    - 0.0
+    t_world_base:
+    - - 1
+      - 0
+      - 0
+      - 0
+    - - 0
+      - 1
+      - 0
+      - 0
+    - - 0
+      - 0
+      - 1
+      - 0
+    - - 0
+      - 0
+      - 0
+      - 1
+cameras:
+  cam_high:
+    index: 1
+    serial: '218622271652'
+    kind: overhead
+    homography_file: calibration/cam_high_homography.npz
+    depth_server: http://127.0.0.1:8766
+    # extrinsics_file dropped 2026-08-10: the pose now derives from the
+    # board-stitched homography (1.1 mm on the plane); the measured file
+    # plateaued at 12.8 mm against it and would override the derivation.
+  # cam_low: no extrinsics, no homography — it has never contributed a
+  # measurement and it costs a depth stream. Kept here as a record.
+  # cam_low:
+  #   index: 1
+  #   serial: '230322270466'
+  #   kind: side
+  #   depth_server: http://127.0.0.1:8766
+  cam_low:
+    serial: '230322270466'
+    kind: side
+    depth_server: http://127.0.0.1:8768
+  cam_left_wrist:
+    serial: '218622271803'
+    kind: wrist
+    arm: left
+    depth_server: http://127.0.0.1:8767
+    # Hand-eye measured 2026-08-18 (automated 16-view sweep, intrinsics rms
+    # 0.16 px, board-origin consistency 3.7 mm mean / 7.9 mm max — GOOD).
+    # calibration/left_wrist_handeye.npz holds the raw solve.
+    t_ee_cam:
+      [[-0.0069, -0.3361, 0.9418, -0.1054],
+      [-1.0, -0.0027, -0.0083, 0.0087],
+      [0.0053, -0.9418, -0.3361, 0.0537],
+      [0.0, 0.0, 0.0, 1.0]]
+  cam_right_wrist:
+    serial: '218622272313'
+    kind: wrist
+    arm: right
+    depth_server: http://127.0.0.1:8767
+    # Hand-eye, measured 2026-07-30: intrinsics RMS 0.19 px, 5.5 mm consistency.
+    t_ee_cam:
+      [[-0.00162345, -0.32907813, 0.94430130, -0.10105035],
+      [-0.99999275, -0.00271710, -0.00266607, 0.01030423],
+      [0.00344311, -0.94429879, -0.32907133, 0.05363632],
+      [0.00000000, 0.00000000, 0.00000000, 1.00000000]]
+sam_url: http://127.0.0.1:8771
+contact_descend: false
+contact_descend_place: false
+table_z: -0.015
+safety:
+  # 0.15-0.48 was the single-right-arm box — and the grounding LENS is built
+  # from this box (gemini.py projects workspace_x*workspace_y into the image
+  # and crops to it), so the agent literally could not SEE the left half of
+  # the table: "red cube" kept grounding onto whatever sat inside the crop.
+  # Widened 2026-08-18 to the bimanual table; each arm's own IK/reach still
+  # bounds what it will actually attempt.
+  workspace_x:
+  - 0.10
+  - 0.85
+  workspace_y:
+  - -0.35
+  - 0.35
+  workspace_z:
+  - 0.000
+  - 0.18
+  max_step_m: 0.6
+  min_move_seconds: 0.4
+  max_tool_speed_mps: 0.12
+  # 0.8 reverted to 0.6 (2026-08-18 evening): right-arm grasp accuracy
+  # degraded right after the speed bump — it was the only global change in
+  # that window. Re-raise only with a before/after accuracy check.
+  speed_scale: 0.6
+  gripper_effort_limit: 20.0
+  confirm_actions: false
+  dry_run: false
+# Fair-stack (RigRobot) guard: world-frame box every commanded target must
+# fall inside, either arm. Sized from the K=3 handover demos themselves —
+# grasp z=-0.007, air handover [0.513, 0.023, 0.277], bowl place x=0.591 —
+# plus margin; the right arm cannot physically pass x~0.42 anyway, and the
+# left arm's base sits at x=0.9309. Wired 2026-08-17; before this the fair
+# guard was silently OFF (HeronConfig had no `workspace` field, L9).
+workspace:
+  min_xyz: [0.08, -0.35, -0.03]
+  max_xyz: [0.85, 0.35, 0.35]
+  max_effort_n: 25.0
+
+budgets:
+  max_steps_executed: 40
+  max_edits: 12
+  max_repairs_per_step: 3
+  # 900, not 300: a stacking episode that recovers from one mis-grounded
+  # place spends ~90 s on the repair loop and was killed 20 s before its
+  # own success verification (watched happen, 2026-08-10).
+  wall_clock_s: 900
+  verify_max_age_s: 25
+models:
+  er_model: gemini-robotics-er-2-preview
+  thinking_ground: minimal
+  thinking_verify: low
+  thinking_plan: low
+  thinking_repair: low
+disable_skills:
+- home
+- handover
+- tamp_pick
+- tamp_place
+- vla
+episodes_dir: episodes
+memory_dir: memory_store
+grounding_mode: proposal
+active_arms: [right, left]
+
+# THIS rig's geometry, not the sim kit's: the default embodiment text says
+# "left serves y>0, right y<0", which is the twin's mounting — the planner
+# read it and never assigned the left arm. These arms face each other
+# across X.
+embodiment: >-
+  a bimanual stationary robot: two Trossen WidowX AI arms FACING EACH OTHER
+  across the table along the x axis, with four RGB-D cameras (cam_high
+  overhead, cam_low front, one wrist camera per arm). World frame: origin at
+  the RIGHT arm's base, x runs across the table toward the LEFT arm's base
+  at x=0.92, z up, table top z=0. The RIGHT arm comfortably reaches
+  x 0.15-0.45; the LEFT arm reaches x 0.50-0.85. Neither arm can cross past
+  mid-table (x 0.46-0.50). Set the arm per pick/place by the object's side
+  (or "auto" to let reach decide), use the same arm name in
+  holding/gripper_empty predicates, and remember a cross-table transport
+  needs both arms.
+grasp_service_url: null
+
+# aim_trim retired 2026-08-18 evening with wrist_refine ON: the wrist
+# camera's delta is measured through the arm's own FK chain, so it already
+# carries the kinematic offset — a constant trim on top double-counts
+# (the pinch loop failed exactly that way). For the record, the measured
+# left fingertip offset was [-13.3, -3.0] mm at r~0.25-0.35.
+aim_trim_xy_m: {}
+
+# pinch_refine retired 2026-08-18 evening (25 s/pick and noisy at high
+# tilt).
+#
+# wrist_refine BACK ON 2026-08-19: the simple-chain experiment returned a
+# split verdict. On the +y half open-loop grasps are sub-mm (verified:
+# r=0.425 carry 0.2 mm). On the -y half the right arm's links flex under
+# load ~20-30 mm PAST the command while the controller's FK reads SHORT —
+# geometry from the one successful -y grasp: cube truly at [0.378,-0.064],
+# FK reported [0.341,-0.079], a 33 mm radius error no yaw or calibration
+# explains. No open-loop scheme can see that (two compensation attempts
+# both made it worse in one direction or the other). The wrist camera
+# measures object-relative-to-gripper through the same flexed chain, so
+# the flex cancels — it fixed exactly this class of miss on the left arm
+# (34.9 mm first-try correction, 2026-08-18).
+pinch_refine_arms: []
+wrist_refine: true
+
+# Reach-sag compensation: tried 2026-08-19 at k=0.107 (from L14's "16 mm
+# short at r=0.45") and REVERTED the same morning — it CAUSED two stack
+# topples: at r=0.40 the aim overshot ~11 mm outward while the target
+# grounding was verified pixel-accurate, and the cube tipped off the far
+# edge both times. The r=0.39-0.42 air-closes that motivated it plowed the
+# cube OUTWARD, i.e. the aim there was radially long, not short — L14's
+# direction does not hold on this rig. Keep 0 unless a measured curve says
+# otherwise.
+sag_comp_m_per_m: 0.0
+sag_comp_r0_m: 0.30
+
+# Operator dialogue: brief before motion, corrections replan
+interactive: true
+speak: true
+
+# Today's table inventory (2026-08-17): update when the scene changes.
+collect_rearrange_entities:
+  blue_block: the blue block
+collect_rearrange_supports:
+  white_plate: the white plate

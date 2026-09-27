@@ -1,0 +1,98 @@
+.env
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+episodes/
+memory_store/
+calibration/*.npz
+.pytest_cache/
+.DS_Store
+calibration_backup/handeye_raw/*.jpg
+skill_library/
+reports/*.tgz
+
+# Simulation meshes are fetched by tools/build_sim_scene.py, not versioned.
+assets/trossen_description/
+MUJOCO_LOG.TXT
+datasets/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.blg
+paper/*.bbl
+
+# experiment data — lives on the cluster / local disk, not in git
+checkpoints/
+videos/
+*.safetensors
+autoresearch/tasks/*/transcript_*
+autoresearch/tasks/*/launch_nohup*.log
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.bbl
+paper/*.blg
+# paper build artifacts (icra/ws dirs)
+paper_icra/*.aux
+paper_icra/*.log
+paper_icra/*.out
+paper_icra/*.fls
+paper_icra/*.fdb_latexmk
+paper_icra/*.blg
+paper_icra/main.pdf
+paper_ws_*/*.aux
+paper_ws_*/*.log
+paper_ws_*/*.out
+paper_ws_*/*.fls
+paper_ws_*/*.fdb_latexmk
+paper_ws_*/*.blg
+paper_ws_*/main.pdf
+missfont.log
+# campaign heavy artifacts: session transcripts and round streams
+autoresearch/campaigns/*/workers/
+autoresearch/campaigns/*/rounds/*.jsonl
+autoresearch/campaigns/*/rounds/*.err
+autoresearch/campaigns/*/*.log
+autoresearch/campaigns/*/coordinator/*.log
+
+# Agent-session runtime junk: per-run pids, rendered progress views, and the
+# local Claude cache (hundreds of MB). Ledgers (NOTES.md) DO get committed.
+.claude/
+tmp/
+*.orig
+autoresearch/tasks/*/launch.pid
+autoresearch/tasks/*/agent_view.json
+autoresearch/tasks/*/transcript_*.jsonl
+autoresearch/tasks/*/transcript_*.err
+autoresearch/tasks/*/transcript_*.meta
+
+# LaTeX build artifacts (the .tex and figs are versioned; these are not)
+paper_techreport/*.aux
+paper_techreport/*.bbl
+paper_techreport/*.blg
+paper_techreport/*.log
+paper_techreport/*.out
+paper_techreport/*.pdf
+
+# dead-worker archives and campaign transcript/gif artifacts
+autoresearch/campaigns/*/_dead_*/
+autoresearch/campaigns/**/transcript_*
+autoresearch/campaigns/**/*.gif
+
+# handover slimming (2026-09-02): generated / heavy / manuscript trees stay local
+autoresearch/tasks/
+packs/
+paper/
+paper_icra/
+paper_ws_neurips/
+paper_ws_corl/
+paper_techreport/
+submissions/
+Formatting_Instructions_For_NeurIPS_2026/
+WALLCLOCK.md

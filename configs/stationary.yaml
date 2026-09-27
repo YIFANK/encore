@@ -1,0 +1,61 @@
+# Trossen AI Stationary rig description.
+# World frame := RIGHT follower arm base frame (x forward, y left, z up).
+# Fill in serials/IPs for your kit, then run `heron doctor` and `heron calibrate`.
+
+mode: real
+
+arms:
+  right:
+    ip: "192.168.1.4"        # kit convention: follower right
+    t_world_base:            # identity — the right base IS the world frame
+      [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+  left:
+    ip: "192.168.1.5"        # kit convention: follower left
+    t_world_base:            # PLACEHOLDER — measure with `heron calibrate --arms`
+      [[-1, 0, 0, 0.0], [0, -1, 0, 0.60], [0, 0, 1, 0.0], [0, 0, 0, 1]]
+
+cameras:
+  cam_high:
+    serial: ""               # RealSense D405 serial (realsense-viewer shows it)
+    kind: overhead
+    extrinsics_file: calibration/cam_high.npz
+  cam_low:
+    serial: ""
+    kind: front
+    extrinsics_file: calibration/cam_low.npz
+  cam_left_wrist:
+    serial: ""
+    kind: wrist
+    arm: left
+    # t_ee_cam: hand-eye transform; leave null until measured (wrist 3D disabled, VQA still works)
+  cam_right_wrist:
+    serial: ""
+    kind: wrist
+    arm: right
+
+safety:
+  workspace_x: [0.10, 0.55]   # in the RIGHT-arm base frame; tune to your table
+  workspace_y: [-0.35, 0.35]
+  workspace_z: [0.01, 0.40]
+  max_step_m: 0.35
+  min_move_seconds: 1.5
+  gripper_effort_limit: 20.0  # N (spec max 100)
+  confirm_actions: true       # keep true for first sessions
+  dry_run: false
+
+budgets:
+  max_steps_executed: 40
+  max_edits: 12
+  max_repairs_per_step: 3
+  wall_clock_s: 1800
+  verify_max_age_s: 25
+
+models:
+  er_model: gemini-robotics-er-2-preview
+  thinking_ground: minimal
+  thinking_verify: low
+  thinking_plan: low
+  thinking_repair: low
+
+episodes_dir: episodes
+memory_dir: memory_store

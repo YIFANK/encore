@@ -1,0 +1,240 @@
+# Long-horizon layout: four blocks, two targets, and an order that matters.
+# Each placement changes where the next one can go, which is where re-perceiving
+# inside every skill hurts most — the waste grows with the length of the task.
+#
+# MuJoCo twin of the abaka rig. Every measured value is copied from
+# configs/abaka.yaml unchanged — table height, workspace envelope, camera
+# calibration — so a plan that works here is a plan that has been checked
+# against the real cell's geometry, not against a convenient one.
+#
+# Differences from the hardware, stated so nobody is surprised by them:
+#   depth is exact here (the D405 scatters 5.7 mm on wood, 25 mm on gloss)
+#   the gripper is a position joint, not a force-controlled one
+#   nothing reproduces the driver, where a real run died on 'joint 6 is in
+#     external_effort mode'
+# The lab's actual Trossen AI Stationary rig, driven from the abaka Mac (M4).
+# Ground truth sources: ~/lerobot_trossen/STATIONARY_AI_使用说明.md and
+# remote_model_experiment/ on that machine.
+#
+# - Arms live on the dedicated 192.168.10.0/24 ethernet (Mac is .1):
+#     leader R/L = .2/.3 (NOT used by Heron), follower R/L = .4/.5
+# - Cameras are AVFoundation/OpenCV indices. librealsense cannot open the D405s
+#   from an SSH context, but CAN as root in a GUI Terminal - see
+#   docs/depth-runbook.md, whose old "impossible on this Mac" verdict was
+#   wrong. Until the depth sidecar runs this stays RGB-only (homography):
+#     STALE ONCE THE DEPTH SIDECAR RUNS. It seizes cam_high, which then leaves
+#     AVFoundation and shifts everything after it down one. As of 2026-07-31:
+#     0 = cam_left_wrist, 1 = cam_low, 2 = cam_right_wrist, 3 = Mac built-in.
+#     Re-derive with tools/identify_uvc.py after any replug; do not trust this line.
+# - camera_dashboard.py owns the cameras when it is running — stop it first.
+# - Their estop.py + reset_all_to_staged_safe.py remain the outer safety layer.
+#
+# World frame := RIGHT follower base frame. table_z: measure once via their
+# contact-descent trick (calib_table.py stage 1) or a ruler, then run:
+#   heron calibrate --config configs/abaka.yaml --camera cam_high --arm right --planar
+#
+# DRIVER PIN: this rig's controller firmware matches trossen-arm 1.9.3 (the
+# version in ~/lerobot_trossen/.venv). Keep Heron's venv on ==1.9.3 until the
+# firmware is upgraded — driver/firmware major.minor must match.
+
+mode: sim
+
+arms:
+  right:
+    ip: "192.168.10.4"
+    # Gripper pointing straight down (tool +x is the approach axis on wxai_v0).
+    # Verified against the hand-guided hand-eye poses, where the operator held
+    # the wrist camera facing the table. Do NOT let motions inherit the ready
+    # pose's horizontal wrist — that path swings into the table and the rail.
+    approach_rvec: [0.0, 1.5708, 0.0]
+    t_world_base:
+      [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+  # LEFT ARM DISABLED 2026-07-31. Its t_world_base has never been measured —
+  # the matrix below is a guess — so any motion planned for it is planned in a
+  # frame we made up. choose_arm gives the +y half of the table to the left arm,
+  # so the first dry run picked it for a block at y=+0.18 and the workspace
+  # check rejected the target; that check is the last line of defence, not a
+  # design. Restore this block after measuring the transform by touching three
+  # points shared with the right arm.
+  # left:
+  #   ip: "192.168.10.5"
+  #   t_world_base:          # PLACEHOLDER — measure by touching 3 shared points
+  #     [[-1, 0, 0, 0.0], [0, -1, 0, 0.60], [0, 0, 1, 0.0], [0, 0, 0, 1]]
+
+cameras:
+  cam_high:
+    # Kept for the depth-free fallback only. depth_server below takes
+    # precedence, so this camera is NOT opened over UVC and the index colliding
+    # with cam_low is harmless — but it would be a real collision if anyone
+    # commented depth_server out without re-running tools/identify_uvc.py.
+    index: 1
+    # RealSense serial, identified 2026-07-31 by photographing each D405 alone
+    # (tools/identify_cameras.py) — this is the only top-down view. The UVC
+    # `index` above is a DIFFERENT namespace and gets reassigned on replug, so
+    # the serial is the durable identifier and the reason to keep it here.
+    serial: "218622271652"
+    kind: overhead
+    homography_file: calibration/cam_high_homography.npz
+    # RGB-D from the sidecar, enabled 2026-07-31 after the on-site validation
+    # (docs/depth-runbook.md). Run it at 1280x720: the homography below was
+    # fitted in that pixel space, and 640x480 on a D405 is a horizontal crop.
+    # NOTE: the other cameras' UVC indices renumber once this one is seized —
+    # re-derive them with tools/identify_uvc.py rather than remembering them.
+
+    # Full camera pose, solved from depth + the homography by
+    # tools/extrinsics_from_homography.py. Without it, depth cannot be placed
+    # in the arm's frame and grounding falls back to the plane.
+    extrinsics_file: calibration/cam_high.npz
+  # OFF 2026-08-02, by decision rather than defect — uncomment to bring back.
+  #
+  # The twin's second viewpoint works and the code behind it stays: the camera
+  # is in the scene (tools/build_sim_scene.py), `_usable_cameras` will enlist
+  # it, `ground_entity` keeps it as a reserve consulted only when the primary
+  # cannot see, and tests/test_view_occlusion.py pins the geometry that makes it
+  # worth having. None of that costs anything while this stays commented.
+  #
+  # What it buys, measured: 21 of 140 verifications went into a view the system
+  # knew was blocked and only 4 could step aside. What it costs: the reserve is
+  # questioned per blocked entity, which is cheap, but the capture and the
+  # second grounding are not free on a real rig's frame rate.
+  #
+  # SIMULATED ONLY, AND THIS FILE IS `mode: sim`. The rig has this camera and
+  # has never calibrated it. It carries no extrinsics_file on purpose: in the
+  # twin the pose comes from the model, and `_usable_cameras` asks the BACKEND
+  # whether a camera is posed rather than inferring it from a filename. On the
+  # real rig the entry would stay inert until `heron calibrate --camera cam_low`
+  # produces one, because until then it genuinely cannot place a pixel in the
+  # arm's frame.
+  #
+  # RE-ENABLED 2026-08-04 as a VQA witness: the twin renders it perfectly
+  # (the AVFoundation-index breakage above is a REAL-rig disease), and an
+  # 18 mm-offset stack that geometry passed was vetoed by an overhead-only
+  # VQA that saw "side by side". The side view answers that unambiguously.
+  cam_low:
+    kind: front
+  # DISABLED 2026-07-31. These two are addressed by AVFoundation INDEX, and
+  # the index is reassigned every time another camera is handed to
+  # librealsense — which broke grounding three separate times today: cam_low
+  # pointed at the right wrist camera, then shifted again, then failed to
+  # open and ended a run.
+  #
+  # Neither has ever contributed a measurement. cam_low has no extrinsics and
+  # no homography, so grounding already skips it; cam_left_wrist belongs to
+  # the left arm, which is disabled for want of a base transform. The two
+  # cameras that DO work are addressed by serial through the depth sidecar,
+  # and a serial does not move.
+  #
+  # Put them back once calibrated — and prefer giving them to the sidecar
+  # (by serial) over reinstating an index.
+  # cam_low:
+  #   # Renumbered 2026-07-31: librealsense seized cam_high, so every UVC index
+  #   # after it shifted down one. Confirmed by tools/identify_uvc.py — index 1
+  #   # is the low front-on view. Re-run that tool after any replug.
+  #   index: 1
+  #   kind: front
+  # cam_left_wrist:
+  #   index: 0          # unchanged by the shift: it was already first
+  #   kind: wrist
+  #   arm: left
+  cam_right_wrist:
+    index: 2          # was 3; index 3 is now the Mac's built-in camera
+    kind: wrist
+    arm: right
+    serial: "218622272313"   # identified 2026-07-31 by matching viewpoints
+    # RGB-D from the sidecar too. At the hover pose this camera is 10-20 cm from
+    # the target — inside the D405's 7-50 cm spec, where cam_high at 1.04 m is
+    # not — so place reads the surface height here in one shot instead of
+    # stepping down 5 mm at a time feeling for it.
+
+    # Hand-eye, measured 2026-07-30: intrinsics RMS 0.19 px, 5.5 mm consistency.
+    # Composed with the live arm pose on every capture — a wrist camera's
+    # extrinsics move with the arm.
+    t_ee_cam:
+      [[-0.00162345, -0.32907813, 0.94430130, -0.10105035],
+      [-0.99999275, -0.00271710, -0.00266607, 0.01030423],
+      [0.00344311, -0.94429879, -0.32907133, 0.05363632],
+      [0.00000000, 0.00000000, 0.00000000, 1.00000000]]
+
+# SAM2 masks, tunnelled to the etk box GPU (ssh -L 8767:127.0.0.1:8765).
+# 8765 is taken here by camera_dashboard. This only has an effect once
+# depth is on: without depth, deproject_region returns before it looks at
+# a mask. Unset or unreachable falls back to detection boxes.
+sam_url: null
+
+# Trust the depth for grasp height. Contact-descent exists for a rig with no
+# depth: it steps down 5 mm at a time feeling for the surface, and every step is
+# a blocking round-trip to the controller, so the arm visibly stutters down. We
+# have RGB-D and calibrated extrinsics now, so pick descends to the perceived
+# height in one motion. Turn this back on if the depth becomes untrustworthy —
+# glossy objects are the known weak case (the plate measured 25 mm of scatter).
+contact_descend: false
+# ...but DO feel for the surface when placing. The block reads cleanly in depth;
+# the glossy plate scatters 25.5 mm inside its own mask with points 84 mm below
+# the table, and releasing onto that by depth alone drops from the wrong height.
+contact_descend_place: true
+
+table_z: -0.0150               # measured 2026-07-30 by fingertip contact (tools/measure_table.py)
+
+safety:
+  # Measured 2026-07-31 by sweeping our own IK over 8325 poses with a
+  # straight-down wrist: only 30% of the old box was reachable at all. The
+  # envelope is x 0.15..0.48, y -0.35..0.35, z -0.02..0.17 — and that is the
+  # OUTER hull, not a product: at x=0.46 nothing above z=0.05 has a solution.
+  # These numbers are still only a coarse guard; the kinematics does the real
+  # refusing. They are set to the measured hull so the box stops lying.
+  workspace_x: [0.15, 0.48]
+  workspace_y: [-0.35, 0.35]
+  workspace_z: [0.01, 0.18]
+  # The ready pose is ~0.55 m from the table, so a tighter cap turns one legal
+  # travel into hops through unvalidated intermediate heights. The workspace box
+  # is the real guard against a bad coordinate.
+  max_step_m: 0.60
+  min_move_seconds: 2.0       # slow first sessions
+  speed_scale: 1.0    # no operator standing next to it
+  gripper_effort_limit: 20.0
+  confirm_actions: false
+  dry_run: false
+
+budgets:
+  max_steps_executed: 40
+  max_edits: 12
+  max_repairs_per_step: 3
+  wall_clock_s: 1800
+  verify_max_age_s: 25
+
+models:
+  # gemini-3.5-flash through the pp-api relay (OpenAI-compatible), for price:
+  # ER-2 is billed at robotics-preview rates and grounding is the call-count
+  # bulk of every episode. Measured before switching (tools/probe_grounding.py
+  # --rounds 3 --seed 7, relay vs ER direct, same layouts, 2026-08-03):
+  # blocks median 2.2 mm / p90 2.4 / worst 2.6 under BOTH models — the mask
+  # pipeline snaps either model's box to the same centroid, so grounding does
+  # not depend on which of the two is pointing. The one visible cost is
+  # latency: relay calls ran ~3x slower (median 8.9 s vs 2.9 s per
+  # locate_many), which this file's budgets absorb. URL and key are read from
+  # the environment (.env: PPAPI_*) so neither lands in git. To go back to
+  # Google direct: er_model gemini-robotics-er-2-preview, api_format gemini,
+  # drop the two env names.
+  er_model: gemini-3.5-flash
+  api_format: openai
+  api_key_env: PPAPI_API_KEY
+  base_url_env: PPAPI_BASE_URL
+  # Not sent over the OpenAI-format relay (no agreed parameter); kept so the
+  # journal still records intent and a switch back to ER keeps its tiering.
+  thinking_ground: minimal
+  thinking_verify: low
+  thinking_plan: low
+  thinking_repair: low
+
+# Skills this rig cannot run. Without this the repair engine spends its budget
+# escalating into them: the 2026-07-31 dry run failed a place precondition,
+# retried pick, then tried tamp_pick (needs a TiPToP server that is not running)
+# and vla (needs lerobot, which `heron doctor` reports missing), and exhausted
+# 12 edits without ever attempting anything that could have worked.
+disable_skills: [tamp_pick, tamp_place, vla]
+
+episodes_dir: episodes
+memory_dir: memory_store
+
+sim_scene: assets/trossen_sorting.xml
+on_criterion: support

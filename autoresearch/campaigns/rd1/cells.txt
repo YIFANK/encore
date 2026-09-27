@@ -1,0 +1,10 @@
+put_bottles_into_dustbin|700|Pick up the bottles and throw them into the dustbin, using handover when needed.
+organize_table|1000|Place the mouse on the mouse pad, push the keyboard into the frame, put the figurine on the stand, place the alarm clock on the drawer, then open the drawer and put all remaining miscellaneous items inside.
+classify_objects_by_language|1100|(per-episode; read it from api.instruction())
+imitate_sorting_sequence|1600|Observe the object placement order, remember it, then place the corresponding objects into the basket in the same order.
+arrange_largest_number|1050|Arrange the numbers from left to right to form the largest possible number, and place them on the pad.
+pack_objects_into_box|1300|Place all the objects into the box with their front sides facing left.
+classify_objects|1100|Sort the objects by category into the three baskets.
+build_tower|1050|Build a tower using the wooden blocks and wooden boards.
+make_kong|600|Wait for the opponent to discard a tile, then declare a kong with the matching tiles.
+fold_clothes|500|Fold the clothes neatly.

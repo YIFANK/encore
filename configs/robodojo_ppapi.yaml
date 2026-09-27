@@ -1,0 +1,51 @@
+# RoboDojo harness VLM via the pp-api relay (OpenAI-compatible). Gemini direct credits
+# depleted 2026-09-24 02:05 (cluster time); see tmp/rd2_eval50.log.
+# gpt-5.4 / -mini / -nano / gpt-4.1-mini point 17-127 px off on RoboDojo cam_head; gemini-3.5-flash 1-2 px (2026-09-24 probe).
+mode: libero
+embodiment: "a single Franka arm in the LIBERO tabletop simulation. The one arm is\
+  \ named \"arm\" \u2014 every pick/place uses arm=\"arm\" and every holding/gripper_empty\
+  \ predicate uses \"arm\". Cameras: cam_high (front-facing agentview), cam_arm_wrist\
+  \ (eye-in-hand). World frame: robosuite world, table surface at about z=0.0, +z\
+  \ up; the resting arm starts high above it."
+table_z: 0.0
+contact_descend: false
+disable_skills:
+- vla
+libero:
+  suite: libero_object
+  task_id: 0
+  episode: 0
+  seed: 0
+  image_size: 512
+safety:
+  workspace_x:
+  - -0.45
+  - 0.45
+  workspace_y:
+  - -0.45
+  - 0.45
+  workspace_z:
+  - -0.02
+  - 1.3
+  max_step_m: 0.5
+  min_move_seconds: 0.1
+  gripper_effort_limit: 20.0
+  confirm_actions: false
+  dry_run: false
+budgets:
+  max_steps_executed: 40
+  max_edits: 12
+  max_repairs_per_step: 3
+  wall_clock_s: 1200
+  verify_max_age_s: 60
+models:
+  er_model: gemini-3.5-flash
+  thinking_ground: minimal
+  thinking_verify: low
+  thinking_plan: low
+  thinking_repair: low
+  api_format: openai
+  base_url_env: PPAPI_BASE_URL
+  api_key_env: PPAPI_API_KEY
+episodes_dir: episodes
+memory_dir: memory_store

@@ -1,0 +1,484 @@
+{
+  "generated": "2026-08-24",
+  "arm": "A (plain ASPIRE, their framework, verbatim)",
+  "inner_model": "claude-opus-5",
+  "protocol": {
+    "dev_seeds": "51-65",
+    "heldout_seeds": "1-50",
+    "heldout_runs_per_cell": 1
+  },
+  "cells": {
+    "libero_goal_swap/open_the_middle_drawer_of_the_cabinet": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_open_middle_drawer_pos",
+      "encore_passes": 0,
+      "encore_trials": 50
+    },
+    "libero_goal_swap/open_the_top_drawer_and_put_the_bowl_inside": {
+      "arm_a_passes": 42,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_open_top_drawer_put_bowl_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_goal_swap/push_the_plate_to_the_front_of_the_stove": {
+      "arm_a_passes": 13,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_push_plate_front_stove_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_goal_swap/put_the_bowl_on_the_plate": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_put_bowl_on_plate_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_goal_swap/put_the_bowl_on_the_stove": {
+      "arm_a_passes": 38,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_put_bowl_on_stove_pos",
+      "encore_passes": 48,
+      "encore_trials": 50
+    },
+    "libero_goal_swap/put_the_bowl_on_top_of_the_cabinet": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_put_bowl_top_cabinet_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_goal_swap/put_the_cream_cheese_in_the_bowl": {
+      "arm_a_passes": 39,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_put_cream_cheese_in_bowl_pos",
+      "encore_passes": 45,
+      "encore_trials": 50
+    },
+    "libero_goal_swap/put_the_wine_bottle_on_the_rack": {
+      "arm_a_passes": 49,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_put_wine_on_rack_pos",
+      "encore_passes": 46,
+      "encore_trials": 50
+    },
+    "libero_goal_swap/put_the_wine_bottle_on_top_of_the_cabinet": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_put_wine_top_cabinet_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_goal_swap/turn_on_the_stove": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_turn_on_stove_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_goal_task/open_the_middle_drawer_of_the_cabinet": {
+      "arm_a_passes": 49,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_open_middle_drawer_task",
+      "encore_passes": 48,
+      "encore_trials": 50
+    },
+    "libero_goal_task/open_the_top_drawer_and_put_the_bowl_inside": {
+      "arm_a_passes": 42,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_open_top_drawer_put_bowl_task",
+      "encore_passes": 49,
+      "encore_trials": 50
+    },
+    "libero_goal_task/push_the_plate_to_the_front_of_the_stove": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_push_plate_front_stove_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_goal_task/put_the_bowl_on_the_plate": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_put_bowl_on_plate_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_goal_task/put_the_bowl_on_the_stove": {
+      "arm_a_passes": 0,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_put_bowl_on_stove_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_goal_task/put_the_bowl_on_top_of_the_cabinet": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_put_bowl_top_cabinet_task",
+      "encore_passes": 0,
+      "encore_trials": 50
+    },
+    "libero_goal_task/put_the_cream_cheese_in_the_bowl": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_put_cream_cheese_in_bowl_task",
+      "encore_passes": 48,
+      "encore_trials": 50
+    },
+    "libero_goal_task/put_the_wine_bottle_on_the_rack": {
+      "arm_a_passes": 44,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_put_wine_on_rack_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_goal_task/put_the_wine_bottle_on_top_of_the_cabinet": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_put_wine_top_cabinet_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_goal_task/turn_on_the_stove": {
+      "arm_a_passes": 47,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "goal_turn_on_stove_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_swap/pick_up_the_alphabet_soup_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_alphabet_soup_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_swap/pick_up_the_bbq_sauce_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_bbq_sauce_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_swap/pick_up_the_butter_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_butter_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_swap/pick_up_the_chocolate_pudding_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_chocolate_pudding_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_swap/pick_up_the_cream_cheese_and_place_it_in_the_basket": {
+      "arm_a_passes": 49,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_cream_cheese_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_swap/pick_up_the_ketchup_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_ketchup_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_swap/pick_up_the_milk_and_place_it_in_the_basket": {
+      "arm_a_passes": 49,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_milk_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_swap/pick_up_the_orange_juice_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_orange_juice_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_swap/pick_up_the_salad_dressing_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_salad_dressing_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_swap/pick_up_the_tomato_sauce_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_tomato_sauce_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_task/pick_up_the_alphabet_soup_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_alphabet_soup_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_task/pick_up_the_bbq_sauce_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_bbq_sauce_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_task/pick_up_the_butter_and_place_it_in_the_basket": {
+      "arm_a_passes": 48,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_butter_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_task/pick_up_the_chocolate_pudding_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_chocolate_pudding_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_task/pick_up_the_cream_cheese_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_cream_cheese_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_task/pick_up_the_ketchup_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_ketchup_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_task/pick_up_the_milk_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_milk_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_task/pick_up_the_orange_juice_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_orange_juice_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_task/pick_up_the_salad_dressing_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_salad_dressing_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_object_task/pick_up_the_tomato_sauce_and_place_it_in_the_basket": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "obj_tomato_sauce_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_spatial_swap/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate": {
+      "arm_a_passes": 49,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_between_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_spatial_swap/pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate": {
+      "arm_a_passes": 48,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_table_center_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_spatial_swap/pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate": {
+      "arm_a_passes": 31,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_top_drawer_cabinet_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_spatial_swap/pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate": {
+      "arm_a_passes": 47,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_cookie_box_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_spatial_swap/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_next_to_plate_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_spatial_swap/pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate": {
+      "arm_a_passes": 40,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_next_to_ramekin_pos",
+      "encore_passes": 49,
+      "encore_trials": 50
+    },
+    "libero_spatial_swap/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate": {
+      "arm_a_passes": 35,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_on_cookie_box_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_spatial_swap/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_on_ramekin_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_spatial_swap/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate": {
+      "arm_a_passes": 38,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_on_stove_pos",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_spatial_swap/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate": {
+      "arm_a_passes": 30,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_on_wooden_cabinet_pos",
+      "encore_passes": 47,
+      "encore_trials": 50
+    },
+    "libero_spatial_task/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate": {
+      "arm_a_passes": 19,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_between_task",
+      "encore_passes": 49,
+      "encore_trials": 50
+    },
+    "libero_spatial_task/pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate": {
+      "arm_a_passes": 46,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_table_center_task",
+      "encore_passes": 43,
+      "encore_trials": 50
+    },
+    "libero_spatial_task/pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate": {
+      "arm_a_passes": 18,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_top_drawer_cabinet_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_spatial_task/pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate": {
+      "arm_a_passes": 44,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_cookie_box_task",
+      "encore_passes": 47,
+      "encore_trials": 50
+    },
+    "libero_spatial_task/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_next_to_plate_task",
+      "encore_passes": 43,
+      "encore_trials": 50
+    },
+    "libero_spatial_task/pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_next_to_ramekin_task",
+      "encore_passes": 49,
+      "encore_trials": 50
+    },
+    "libero_spatial_task/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_on_ramekin_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    },
+    "libero_spatial_task/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate": {
+      "arm_a_passes": 42,
+      "arm_a_trials": 50,
+      "encore_c2_cell": "spa_bowl_on_wooden_cabinet_task",
+      "encore_passes": 50,
+      "encore_trials": 50
+    }
+  },
+  "extra_cells_no_c2_counterpart": {
+    "libero_spatial_task/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate": {
+      "arm_a_passes": 33,
+      "arm_a_trials": 50
+    },
+    "libero_spatial_task/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate": {
+      "arm_a_passes": 50,
+      "arm_a_trials": 50
+    }
+  },
+  "totals": {
+    "arm_a": {
+      "passes": 2596,
+      "trials": 2900,
+      "rate": 0.8952
+    },
+    "encore_c2": {
+      "passes": 2761,
+      "trials": 2900,
+      "rate": 0.9521
+    }
+  },
+  "per_suite": {
+    "libero_goal_swap": {
+      "n_cells": 10,
+      "arm_a": "431/500",
+      "arm_a_rate": 0.862,
+      "encore": "439/500",
+      "encore_rate": 0.878
+    },
+    "libero_goal_task": {
+      "n_cells": 10,
+      "arm_a": "432/500",
+      "arm_a_rate": 0.864,
+      "encore": "445/500",
+      "encore_rate": 0.89
+    },
+    "libero_object_swap": {
+      "n_cells": 10,
+      "arm_a": "498/500",
+      "arm_a_rate": 0.996,
+      "encore": "500/500",
+      "encore_rate": 1.0
+    },
+    "libero_object_task": {
+      "n_cells": 10,
+      "arm_a": "498/500",
+      "arm_a_rate": 0.996,
+      "encore": "500/500",
+      "encore_rate": 1.0
+    },
+    "libero_spatial_swap": {
+      "n_cells": 10,
+      "arm_a": "418/500",
+      "arm_a_rate": 0.836,
+      "encore": "496/500",
+      "encore_rate": 0.992
+    },
+    "libero_spatial_task": {
+      "n_cells": 8,
+      "arm_a": "319/400",
+      "arm_a_rate": 0.7975,
+      "encore": "381/400",
+      "encore_rate": 0.9525
+    }
+  }
+}

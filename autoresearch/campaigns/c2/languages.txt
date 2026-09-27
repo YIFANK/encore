@@ -1,0 +1,30 @@
+obj_alphabet_soup|pick up the alphabet soup and place it in the basket
+obj_bbq_sauce|pick up the bbq sauce and place it in the basket
+obj_butter|pick up the butter and place it in the basket
+obj_chocolate_pudding|pick up the chocolate pudding and place it in the basket
+obj_cream_cheese|pick up the cream cheese and place it in the basket
+obj_ketchup|pick up the ketchup and place it in the basket
+obj_milk|pick up the milk and place it in the basket
+obj_orange_juice|pick up the orange juice and place it in the basket
+obj_salad_dressing|pick up the salad dressing and place it in the basket
+obj_tomato_sauce|pick up the tomato sauce and place it in the basket
+spa_bowl_between|pick up the black bowl between the plate and the ramekin and place it on the plate
+spa_bowl_cookie_box|pick up the black bowl next to the cookie box and place it on the plate
+spa_bowl_next_to_plate|pick up the black bowl next to the plate and place it on the plate
+spa_bowl_next_to_ramekin|pick up the black bowl next to the ramekin and place it on the plate
+spa_bowl_on_cookie_box|pick up the black bowl on the cookie box and place it on the plate
+spa_bowl_on_ramekin|pick up the black bowl on the ramekin and place it on the plate
+spa_bowl_on_stove|pick up the black bowl on the stove and place it on the plate
+spa_bowl_on_wooden_cabinet|pick up the black bowl on the wooden cabinet and place it on the plate
+spa_bowl_table_center|pick up the black bowl from table center and place it on the plate
+spa_bowl_top_drawer_cabinet|pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+goal_bowl_on_plate|put the bowl on the plate
+goal_open_middle_drawer|open the middle drawer of the cabinet
+goal_open_top_drawer_put_bowl|open the top drawer and put the bowl inside
+goal_push_plate_front_stove|push the plate to the front of the stove
+goal_put_bowl_on_stove|put the bowl on the stove
+goal_put_bowl_top_cabinet|put the bowl on top of the cabinet
+goal_put_cream_cheese_in_bowl|put the cream cheese in the bowl
+goal_put_wine_on_rack|put the wine bottle on the rack
+goal_put_wine_top_cabinet|put the wine bottle on top of the cabinet
+goal_turn_on_stove|turn on the stove

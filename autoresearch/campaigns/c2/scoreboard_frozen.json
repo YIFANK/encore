@@ -1,0 +1,601 @@
+{
+ "evals": {
+  "eval_c2_goal_bowl_on_plate_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_c2_goal_turn_on_stove_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_c2_obj_alphabet_soup_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_c2_obj_bbq_sauce_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_c2_obj_butter_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_c2_obj_chocolate_pudding_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_c2_rs_square_insert": {
+   "success": 45,
+   "total": 50
+  },
+  "eval_c2_spa_bowl_between_stock": {
+   "success": 48,
+   "total": 50
+  },
+  "eval_c2_spa_bowl_next_to_plate_stock": {
+   "success": 48,
+   "total": 50
+  },
+  "eval_c2_spa_bowl_table_center_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_bowl_on_plate_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_open_middle_drawer_pos": {
+   "success": 0,
+   "total": 50
+  },
+  "eval_v111_c2_goal_open_middle_drawer_stock": {
+   "success": 48,
+   "total": 50
+  },
+  "eval_v111_c2_goal_open_middle_drawer_task": {
+   "success": 48,
+   "total": 50
+  },
+  "eval_v111_c2_goal_open_top_drawer_put_bowl_lad_keyframes": {
+   "success": 29,
+   "total": 50
+  },
+  "eval_v111_c2_goal_open_top_drawer_put_bowl_lad_text": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_open_top_drawer_put_bowl_ladb_fulldemo": {
+   "success": 49,
+   "total": 50
+  },
+  "eval_v111_c2_goal_open_top_drawer_put_bowl_ladb_keyframes": {
+   "success": 49,
+   "total": 50
+  },
+  "eval_v111_c2_goal_open_top_drawer_put_bowl_ladb_richtext": {
+   "success": 18,
+   "total": 50
+  },
+  "eval_v111_c2_goal_open_top_drawer_put_bowl_ladb_richtext_r2": {
+   "success": 44,
+   "total": 50
+  },
+  "eval_v111_c2_goal_open_top_drawer_put_bowl_ladb_text": {
+   "success": 42,
+   "total": 50
+  },
+  "eval_v111_c2_goal_open_top_drawer_put_bowl_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_open_top_drawer_put_bowl_stock": {
+   "success": 49,
+   "total": 50
+  },
+  "eval_v111_c2_goal_open_top_drawer_put_bowl_task": {
+   "success": 49,
+   "total": 50
+  },
+  "eval_v111_c2_goal_push_plate_front_stove_lad_keyframes": {
+   "success": 47,
+   "total": 50
+  },
+  "eval_v111_c2_goal_push_plate_front_stove_lad_text": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_push_plate_front_stove_ladb_fulldemo": {
+   "success": 43,
+   "total": 50
+  },
+  "eval_v111_c2_goal_push_plate_front_stove_ladb_keyframes": {
+   "success": 40,
+   "total": 50
+  },
+  "eval_v111_c2_goal_push_plate_front_stove_ladb_richtext": {
+   "success": 46,
+   "total": 50
+  },
+  "eval_v111_c2_goal_push_plate_front_stove_ladb_text": {
+   "success": 18,
+   "total": 50
+  },
+  "eval_v111_c2_goal_push_plate_front_stove_ladb_text_r2": {
+   "success": 44,
+   "total": 50
+  },
+  "eval_v111_c2_goal_push_plate_front_stove_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_push_plate_front_stove_stock": {
+   "success": 46,
+   "total": 50
+  },
+  "eval_v111_c2_goal_push_plate_front_stove_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_bowl_on_plate_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_bowl_on_plate_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_bowl_on_stove_pos": {
+   "success": 48,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_bowl_on_stove_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_bowl_on_stove_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_bowl_top_cabinet_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_bowl_top_cabinet_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_bowl_top_cabinet_task": {
+   "success": 0,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_cream_cheese_in_bowl_pos": {
+   "success": 45,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_cream_cheese_in_bowl_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_cream_cheese_in_bowl_task": {
+   "success": 48,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_wine_on_rack_pos": {
+   "success": 46,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_wine_on_rack_stock": {
+   "success": 47,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_wine_on_rack_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_wine_top_cabinet_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_wine_top_cabinet_stock": {
+   "success": 49,
+   "total": 50
+  },
+  "eval_v111_c2_goal_put_wine_top_cabinet_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_turn_on_stove_lad_keyframes": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_turn_on_stove_lad_text": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_turn_on_stove_ladb_fulldemo": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_turn_on_stove_ladb_keyframes": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_turn_on_stove_ladb_richtext": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_turn_on_stove_ladb_text": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_turn_on_stove_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_goal_turn_on_stove_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_alphabet_soup_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_alphabet_soup_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_bbq_sauce_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_bbq_sauce_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_butter_lad_keyframes": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_butter_lad_text": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_butter_ladb_fulldemo": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_butter_ladb_keyframes": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_butter_ladb_richtext": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_butter_ladb_text": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_butter_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_butter_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_chocolate_pudding_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_chocolate_pudding_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_cream_cheese_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_cream_cheese_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_cream_cheese_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_ketchup_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_ketchup_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_milk_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_milk_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_milk_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_orange_juice_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_orange_juice_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_orange_juice_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_salad_dressing_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_salad_dressing_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_salad_dressing_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_tomato_sauce_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_tomato_sauce_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_obj_tomato_sauce_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_rs_square_insert": {
+   "success": 45,
+   "total": 50
+  },
+  "eval_v111_c2_rs_square_insert_ladb_fulldemo": {
+   "success": 47,
+   "total": 50
+  },
+  "eval_v111_c2_rs_square_insert_ladb_fulldemo_r2": {
+   "success": 35,
+   "total": 50
+  },
+  "eval_v111_c2_rs_square_insert_ladb_fulldemo_r3": {
+   "success": 40,
+   "total": 50
+  },
+  "eval_v111_c2_rs_square_insert_ladb_keyframes": {
+   "success": 49,
+   "total": 50
+  },
+  "eval_v111_c2_rs_square_insert_ladb_keyframes_r2": {
+   "success": 49,
+   "total": 50
+  },
+  "eval_v111_c2_rs_square_insert_ladb_keyframes_r3": {
+   "success": 34,
+   "total": 50
+  },
+  "eval_v111_c2_rs_square_insert_ladb_richtext": {
+   "success": 46,
+   "total": 50
+  },
+  "eval_v111_c2_rs_square_insert_ladb_text": {
+   "success": 36,
+   "total": 50
+  },
+  "eval_v111_c2_rs_square_insert_ladb_text_r2": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_rs_square_insert_ladb_text_r3": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_between_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_between_stock": {
+   "success": 48,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_between_task": {
+   "success": 49,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_cookie_box_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_cookie_box_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_cookie_box_task": {
+   "success": 47,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_next_to_plate_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_next_to_plate_task": {
+   "success": 43,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_next_to_ramekin_pos": {
+   "success": 49,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_next_to_ramekin_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_next_to_ramekin_task": {
+   "success": 49,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_cookie_box_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_cookie_box_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_cookie_box_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_ramekin_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_ramekin_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_ramekin_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_stove_lad_keyframes": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_stove_ladb_fulldemo": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_stove_ladb_keyframes": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_stove_ladb_richtext": {
+   "success": 49,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_stove_ladb_text": {
+   "success": 49,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_stove_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_stove_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_stove_task": {
+   "success": 41,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_wooden_cabinet_pos": {
+   "success": 47,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_wooden_cabinet_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_on_wooden_cabinet_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_table_center_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_table_center_task": {
+   "success": 43,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_top_drawer_cabinet_pos": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_top_drawer_cabinet_stock": {
+   "success": 44,
+   "total": 50
+  },
+  "eval_v111_c2_spa_bowl_top_drawer_cabinet_task": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v11_c2_goal_open_middle_drawer_stock": {
+   "success": 48,
+   "total": 50
+  },
+  "eval_v11_c2_goal_put_cream_cheese_in_bowl_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v11_c2_goal_turn_on_stove_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v11_c2_obj_alphabet_soup_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v11_c2_obj_bbq_sauce_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v11_c2_obj_butter_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v11_c2_obj_chocolate_pudding_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v11_c2_obj_cream_cheese_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v11_c2_obj_ketchup_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v11_c2_obj_milk_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v11_c2_obj_orange_juice_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v11_c2_obj_tomato_sauce_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v11_c2_spa_bowl_next_to_plate_stock": {
+   "success": 48,
+   "total": 50
+  },
+  "eval_v11_c2_spa_bowl_on_ramekin_stock": {
+   "success": 50,
+   "total": 50
+  },
+  "eval_v11_c2_spa_bowl_table_center_stock": {
+   "success": 50,
+   "total": 50
+  }
+ },
+ "staging_incomplete": []
+}

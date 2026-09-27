@@ -1,0 +1,50 @@
+{"episode": 1, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 811, "duration_s": 8718.2, "benchmark_success": false, "score": 0.0, "judge": "missing (layout unstable or client died)"}
+{"episode": 2, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 745, "duration_s": 8501.5, "benchmark_success": false, "score": 0.0}
+{"episode": 3, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 793, "duration_s": 8303.4, "benchmark_success": false, "score": 0.0, "judge": "missing (layout unstable or client died)"}
+{"episode": 4, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 816, "duration_s": 8094.9, "benchmark_success": false, "score": 0.0}
+{"episode": 5, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 820, "duration_s": 7869.8, "benchmark_success": false, "score": 0.0}
+{"episode": 6, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 883, "duration_s": 7651.1, "benchmark_success": false, "score": 0.0}
+{"episode": 7, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 486, "duration_s": 7421.9, "benchmark_success": false, "score": 0.0, "judge": "missing (layout unstable or client died)"}
+{"episode": 8, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 829, "duration_s": 7299.0, "benchmark_success": false, "score": 0.15}
+{"episode": 9, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 867, "duration_s": 7094.0, "benchmark_success": false, "score": 0.0}
+{"episode": 10, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 804, "duration_s": 6888.7, "benchmark_success": false, "score": 0.0}
+{"episode": 11, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 620, "duration_s": 6694.3, "benchmark_success": false, "score": 0.0}
+{"episode": 12, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 843, "duration_s": 6527.7, "benchmark_success": false, "score": 0.0}
+{"episode": 13, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 867, "duration_s": 6310.2, "benchmark_success": false, "score": 0.0}
+{"episode": 14, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 831, "duration_s": 6102.6, "benchmark_success": false, "score": 0.15}
+{"episode": 15, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 720, "duration_s": 5896.2, "benchmark_success": false, "score": 0.0}
+{"episode": 16, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 857, "duration_s": 5717.9, "benchmark_success": false, "score": 0.0}
+{"episode": 17, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 833, "duration_s": 5505.2, "benchmark_success": false, "score": 0.0}
+{"episode": 18, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 496, "duration_s": 5295.6, "benchmark_success": false, "score": 0.0}
+{"episode": 19, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 887, "duration_s": 5165.1, "benchmark_success": false, "score": 0.0}
+{"episode": 20, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 832, "duration_s": 4956.2, "benchmark_success": false, "score": 0.0}
+{"episode": 21, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 857, "duration_s": 4760.8, "benchmark_success": false, "score": 0.0, "judge": "missing (layout unstable or client died)"}
+{"episode": 22, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 814, "duration_s": 4538.1, "benchmark_success": false, "score": 0.0}
+{"episode": 23, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 952, "duration_s": 4348.3, "benchmark_success": false, "score": 0.0}
+{"episode": 24, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 640, "duration_s": 4130.8, "benchmark_success": false, "score": 0.0}
+{"episode": 25, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 882, "duration_s": 3973.1, "benchmark_success": false, "score": 0.15}
+{"episode": 26, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 793, "duration_s": 3756.5, "benchmark_success": false, "score": 0.0}
+{"episode": 27, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 947, "duration_s": 3571.8, "benchmark_success": false, "score": 0.0}
+{"episode": 28, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 724, "duration_s": 3337.6, "benchmark_success": false, "score": 0.15}
+{"episode": 29, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 639, "duration_s": 3161.9, "benchmark_success": false, "score": 0.0}
+{"episode": 30, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 864, "duration_s": 3008.4, "benchmark_success": false, "score": 0.0}
+{"episode": 31, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 924, "duration_s": 2796.7, "benchmark_success": false, "score": 0.4}
+{"episode": 32, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 876, "duration_s": 2584.5, "benchmark_success": false, "score": 0.0}
+{"episode": 33, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 726, "duration_s": 2377.2, "benchmark_success": false, "score": 0.0, "judge": "missing (layout unstable or client died)"}
+{"episode": 34, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 902, "duration_s": 2208.8, "benchmark_success": false, "score": 0.0}
+{"episode": 35, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 867, "duration_s": 2001.3, "benchmark_success": false, "score": 0.0}
+{"episode": 36, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 819, "duration_s": 1790.3, "benchmark_success": false, "score": 0.0}
+{"episode": 37, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 547, "duration_s": 1593.2, "benchmark_success": false, "score": 0.0}
+{"episode": 38, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 913, "duration_s": 1453.8, "benchmark_success": false, "score": 0.0}
+{"episode": 39, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 886, "duration_s": 1240.3, "benchmark_success": false, "score": 0.0}
+{"episode": 40, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 816, "duration_s": 1032.8, "benchmark_success": false, "score": 0.15}
+{"episode": 41, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 897, "duration_s": 717.0, "benchmark_success": false, "score": 0.0}
+{"episode": 42, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 803, "duration_s": 506.6, "benchmark_success": false, "score": 0.0}
+{"episode": 43, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 734, "duration_s": 320.7, "benchmark_success": false, "score": 0.0, "judge": "missing (layout unstable or client died)"}
+{"episode": 44, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "note": "None", "sim_steps": 609, "duration_s": 139.0, "benchmark_success": false, "score": 0.0}
+{"episode": 45, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "benchmark_success": false, "score": 0.0}
+{"episode": 46, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "benchmark_success": false, "score": 0.0}
+{"episode": 47, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "benchmark_success": false, "score": 0.0}
+{"episode": 48, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "benchmark_success": false, "score": 0.0}
+{"episode": 49, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "benchmark_success": false, "score": 0.0}
+{"episode": 50, "program": "/mnt/data/YifanKang/Heron/packs/rd_classify_objects_k0/program.py", "benchmark_success": false, "score": 0.0}

@@ -1,0 +1,21 @@
+# Encore variant of arx_x5: RGB-D + intrinsics + extrinsics + gripper joint states, one env.
+config_name: arx_x5_encore
+
+config:
+  sim: sim_config_encore
+  scene: default
+  robot: dual_x5
+  camera: camera_config_encore
+
+observation:
+  collect_freq: 25
+  robot:
+    joint_states: true
+    world_ee_state: true
+    gripper_states: true
+  vision:
+    approximate_depth: false
+    depth: true
+    intrinsic_matrix: true
+    extrinsic_matrix: true
+    shape: true

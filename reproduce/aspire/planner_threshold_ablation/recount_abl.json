@@ -1,0 +1,178 @@
+[
+ {
+  "cell": "libero_spatial_swap/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate",
+  "P": 49,
+  "T": 49,
+  "ctrl": 49,
+  "enc_cell": "spa_bowl_between_pos",
+  "k3": 49,
+  "k0": 50
+ },
+ {
+  "cell": "libero_spatial_swap/pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate",
+  "P": 49,
+  "T": 50,
+  "ctrl": 48,
+  "enc_cell": "spa_bowl_table_center_pos",
+  "k3": 50,
+  "k0": 50
+ },
+ {
+  "cell": "libero_spatial_swap/pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate",
+  "P": 47,
+  "T": 36,
+  "ctrl": 31,
+  "enc_cell": "spa_bowl_top_drawer_cabinet_pos",
+  "k3": 50,
+  "k0": 48
+ },
+ {
+  "cell": "libero_spatial_swap/pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate",
+  "P": 47,
+  "T": 50,
+  "ctrl": 47,
+  "enc_cell": "spa_bowl_cookie_box_pos",
+  "k3": 46,
+  "k0": 50
+ },
+ {
+  "cell": "libero_spatial_swap/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate",
+  "P": 50,
+  "T": 50,
+  "ctrl": 50,
+  "enc_cell": "spa_bowl_next_to_plate_pos",
+  "k3": 50,
+  "k0": 50
+ },
+ {
+  "cell": "libero_spatial_swap/pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate",
+  "P": 34,
+  "T": 47,
+  "ctrl": 40,
+  "enc_cell": "spa_bowl_next_to_ramekin_pos",
+  "k3": 49,
+  "k0": 50
+ },
+ {
+  "cell": "libero_spatial_swap/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate",
+  "P": 9,
+  "T": 48,
+  "ctrl": 35,
+  "enc_cell": "spa_bowl_on_cookie_box_pos",
+  "k3": 50,
+  "k0": 47
+ },
+ {
+  "cell": "libero_spatial_swap/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate",
+  "P": 44,
+  "T": 29,
+  "ctrl": 50,
+  "enc_cell": "spa_bowl_on_ramekin_pos",
+  "k3": 50,
+  "k0": 45
+ },
+ {
+  "cell": "libero_spatial_swap/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate",
+  "P": 50,
+  "T": 44,
+  "ctrl": 38,
+  "enc_cell": "spa_bowl_on_stove_pos",
+  "k3": 50,
+  "k0": 50
+ },
+ {
+  "cell": "libero_spatial_swap/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate",
+  "P": 50,
+  "T": 36,
+  "ctrl": 30,
+  "enc_cell": "spa_bowl_on_wooden_cabinet_pos",
+  "k3": 45,
+  "k0": 39
+ },
+ {
+  "cell": "libero_spatial_task/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate",
+  "P": 43,
+  "T": 48,
+  "ctrl": 19,
+  "enc_cell": "spa_bowl_between_task",
+  "k3": 46,
+  "k0": 46
+ },
+ {
+  "cell": "libero_spatial_task/pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate",
+  "P": 46,
+  "T": 23,
+  "ctrl": 46,
+  "enc_cell": "spa_bowl_table_center_task",
+  "k3": 42,
+  "k0": 47
+ },
+ {
+  "cell": "libero_spatial_task/pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate",
+  "P": 45,
+  "T": 43,
+  "ctrl": 18,
+  "enc_cell": "spa_bowl_top_drawer_cabinet_task",
+  "k3": 48,
+  "k0": 44
+ },
+ {
+  "cell": "libero_spatial_task/pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate",
+  "P": 50,
+  "T": 50,
+  "ctrl": 44,
+  "enc_cell": "spa_bowl_cookie_box_task",
+  "k3": 50,
+  "k0": 50
+ },
+ {
+  "cell": "libero_spatial_task/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate",
+  "P": 47,
+  "T": 45,
+  "ctrl": 50,
+  "enc_cell": "spa_bowl_next_to_plate_task",
+  "k3": 50,
+  "k0": 50
+ },
+ {
+  "cell": "libero_spatial_task/pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate",
+  "P": 44,
+  "T": 46,
+  "ctrl": 50,
+  "enc_cell": "spa_bowl_next_to_ramekin_task",
+  "k3": 49,
+  "k0": 46
+ },
+ {
+  "cell": "libero_spatial_task/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate",
+  "P": 21,
+  "T": 50,
+  "ctrl": null,
+  "enc_cell": null
+ },
+ {
+  "cell": "libero_spatial_task/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate",
+  "P": 50,
+  "T": 35,
+  "ctrl": 50,
+  "enc_cell": "spa_bowl_on_ramekin_task",
+  "k3": 50,
+  "k0": 50
+ },
+ {
+  "cell": "libero_spatial_task/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate",
+  "P": 50,
+  "T": 40,
+  "ctrl": null,
+  "enc_cell": null
+ },
+ {
+  "cell": "libero_spatial_task/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate",
+  "P": 46,
+  "T": 50,
+  "ctrl": 42,
+  "enc_cell": "spa_bowl_on_wooden_cabinet_task",
+  "k3": 50,
+  "k0": 50
+ }
+]

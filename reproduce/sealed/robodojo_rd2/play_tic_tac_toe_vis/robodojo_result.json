@@ -1,0 +1,193 @@
+{
+ "dir": "/mnt/data/YifanKang/robodojo/RoboDojo/eval_result/RoboDojo/play_tic_tac_toe/Encore/arx_x5_encore/25199288_ckpt_name=encore,action_type=ee/2026-09-24_05-23-31_1287224",
+ "success_rate": 0.5675675675675675,
+ "eval_time": 37,
+ "score": 60.270270270270274,
+ "details": {
+  "0": {
+   "layout_id": 0,
+   "success": true,
+   "score": 1.0
+  },
+  "1": {
+   "layout_id": 1,
+   "success": true,
+   "score": 1.0
+  },
+  "2": {
+   "layout_id": 2,
+   "success": false,
+   "score": 0.0
+  },
+  "3": {
+   "layout_id": 3,
+   "success": true,
+   "score": 1.0
+  },
+  "4": {
+   "layout_id": 4,
+   "success": false,
+   "score": 0.1
+  },
+  "5": {
+   "layout_id": 5,
+   "success": true,
+   "score": 1.0
+  },
+  "6": {
+   "layout_id": 6,
+   "success": true,
+   "score": 1.0
+  },
+  "7": {
+   "layout_id": 8,
+   "success": true,
+   "score": 1.0
+  },
+  "8": {
+   "layout_id": 10,
+   "success": false,
+   "score": 0.1
+  },
+  "9": {
+   "layout_id": 12,
+   "success": true,
+   "score": 1.0
+  },
+  "10": {
+   "layout_id": 13,
+   "success": false,
+   "score": 0.1
+  },
+  "11": {
+   "layout_id": 14,
+   "success": true,
+   "score": 1.0
+  },
+  "12": {
+   "layout_id": 17,
+   "success": true,
+   "score": 1.0
+  },
+  "13": {
+   "layout_id": 18,
+   "success": true,
+   "score": 1.0
+  },
+  "14": {
+   "layout_id": 19,
+   "success": false,
+   "score": 0.1
+  },
+  "15": {
+   "layout_id": 20,
+   "success": false,
+   "score": 0.1
+  },
+  "16": {
+   "layout_id": 22,
+   "success": true,
+   "score": 1.0
+  },
+  "17": {
+   "layout_id": 23,
+   "success": true,
+   "score": 1.0
+  },
+  "18": {
+   "layout_id": 24,
+   "success": false,
+   "score": 0.1
+  },
+  "19": {
+   "layout_id": 25,
+   "success": false,
+   "score": 0.1
+  },
+  "20": {
+   "layout_id": 27,
+   "success": true,
+   "score": 1.0
+  },
+  "21": {
+   "layout_id": 29,
+   "success": true,
+   "score": 1.0
+  },
+  "22": {
+   "layout_id": 30,
+   "success": false,
+   "score": 0.1
+  },
+  "23": {
+   "layout_id": 31,
+   "success": true,
+   "score": 1.0
+  },
+  "24": {
+   "layout_id": 32,
+   "success": true,
+   "score": 1.0
+  },
+  "25": {
+   "layout_id": 33,
+   "success": true,
+   "score": 1.0
+  },
+  "26": {
+   "layout_id": 34,
+   "success": false,
+   "score": 0.1
+  },
+  "27": {
+   "layout_id": 35,
+   "success": false,
+   "score": 0.1
+  },
+  "28": {
+   "layout_id": 36,
+   "success": true,
+   "score": 1.0
+  },
+  "29": {
+   "layout_id": 41,
+   "success": false,
+   "score": 0.0
+  },
+  "30": {
+   "layout_id": 43,
+   "success": true,
+   "score": 1.0
+  },
+  "31": {
+   "layout_id": 44,
+   "success": false,
+   "score": 0.1
+  },
+  "32": {
+   "layout_id": 45,
+   "success": true,
+   "score": 1.0
+  },
+  "33": {
+   "layout_id": 46,
+   "success": false,
+   "score": 0.1
+  },
+  "34": {
+   "layout_id": 47,
+   "success": false,
+   "score": 0.1
+  },
+  "35": {
+   "layout_id": 48,
+   "success": false,
+   "score": 0.0
+  },
+  "36": {
+   "layout_id": 49,
+   "success": true,
+   "score": 1.0
+  }
+ }
+}

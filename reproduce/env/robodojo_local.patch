@@ -1,0 +1,31 @@
+diff --git a/env/observation_manager/obs_manager.py b/env/observation_manager/obs_manager.py
+index 190d3e2..3cdb4bd 100644
+--- a/env/observation_manager/obs_manager.py
++++ b/env/observation_manager/obs_manager.py
+@@ -154,6 +154,12 @@ class ObsManager:
+                                 obs[env_idx]["state"][f"{robot.arm_name}_joint_state"] = joints[env_idx]
+                                 obs[env_idx]["action"][f"{robot.arm_name}_joint_state"] = joints[env_idx]
+ 
++                    if self.robot_cfg.get("gripper_states", False) and robot.robot_type == "arm":
++                        gj = self.robot_manager.get_end_effector_real_val(robot, env_idx_list=env_idx_list)
++                        for env_idx in env_idx_list:
++                            name = robot.arm_name.split("_")[0]
++                            obs[env_idx]["state"][f"{name}_gripper_joint_state"] = gj[env_idx]
++
+                     if self.robot_cfg["world_ee_state"]:
+                         endpose = self.robot_manager.get_real_endpose(robot=robot, env_idx_list=env_idx_list)
+                         for env_idx in env_idx_list:
+diff --git a/utils/pipeline_utils.py b/utils/pipeline_utils.py
+index 2c4341c..efdf380 100644
+--- a/utils/pipeline_utils.py
++++ b/utils/pipeline_utils.py
+@@ -107,4 +107,9 @@ def process_config(env_cfg, task_name):
+             cfg["enabled_self_collisions"] = False
+ 
+     eval_num = task_info.get("eval_nums", common_info.get("eval_nums", 50))
++    # Encore fair harness (2026-09-17): a private band of N renumbered layouts must be
++    # evaluated in full; the per-task eval_nums (25 for arrange_largest_number,
++    # fold_clothes, hang_mugs) silently truncated a 50-layout sealed band to 25.
++    if os.environ.get("EVAL_NUM"):
++        eval_num = int(os.environ["EVAL_NUM"])
+     return env_cfg, eval_num

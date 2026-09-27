@@ -1,0 +1,49 @@
+# LIBERO simulation — the benchmark Pigey evaluated on (Franka, robosuite/MuJoCo).
+# Heron's decision stack is unchanged; only the robot backend differs.
+# Run:  heron run auto --config configs/libero.yaml     ("auto" = the task's own language goal)
+
+mode: libero
+
+embodiment: >-
+  a single Franka arm in the LIBERO tabletop simulation. The one arm is named "arm" —
+  every pick/place uses arm="arm" and every holding/gripper_empty predicate uses "arm".
+  Cameras: cam_high (front-facing agentview), cam_arm_wrist (eye-in-hand). World frame:
+  robosuite world, table surface at about z=0.0, +z up; the resting arm starts high above it.
+
+table_z: 0.0                  # verified vs mujoco GT: objects sit at z ~0-0.15 in this world
+contact_descend: false        # no compensated F/T signal in sim; depth is exact instead
+disable_skills: [vla]         # no policy server wired in sim yet
+
+libero:
+  suite: libero_object   # pick-and-place tasks
+  task_id: 0
+  episode: 0
+  seed: 0
+  image_size: 512
+
+safety:
+  workspace_x: [-0.45, 0.45]
+  workspace_y: [-0.45, 0.45]
+  workspace_z: [-0.02, 1.30]
+  max_step_m: 0.5
+  min_move_seconds: 0.1
+  gripper_effort_limit: 20.0
+  confirm_actions: false
+  dry_run: false
+
+budgets:
+  max_steps_executed: 40
+  max_edits: 12
+  max_repairs_per_step: 3
+  wall_clock_s: 1200
+  verify_max_age_s: 60
+
+models:
+  er_model: gemini-robotics-er-2-preview
+  thinking_ground: minimal
+  thinking_verify: low
+  thinking_plan: low
+  thinking_repair: low
+
+episodes_dir: episodes
+memory_dir: memory_store

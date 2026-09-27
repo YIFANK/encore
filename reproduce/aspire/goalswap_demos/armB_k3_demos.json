@@ -1,0 +1,212 @@
+{
+  "open_the_middle_drawer_of_the_cabinet": {
+    "runs": [
+      {
+        "run_id": "72823c004dd07aa2",
+        "status": "complete",
+        "passes": 43,
+        "trials": 50,
+        "pass_rate": 0.86,
+        "evidence_scope": "heldout_full",
+        "code_sha256": "7da9048fd220552a7e2d023806fbbcd849cf2ead1848c1cadd80422c0043decc",
+        "seeds": [
+          null,
+          null
+        ],
+        "path": "outputs/libero_fix_loop_eval/libero_goal_swap/open_the_middle_drawer_of_the_cabinet/runs/72823c004dd07aa2/manifest.json"
+      }
+    ],
+    "delivered_code_sha256": "7da9048fd220552a7e2d023806fbbcd849cf2ead1848c1cadd80422c0043decc",
+    "fix_code_exists": true,
+    "findings_exists": true
+  },
+  "put_the_bowl_on_the_stove": {
+    "runs": [
+      {
+        "run_id": "46151595976bba27",
+        "status": "complete",
+        "passes": 48,
+        "trials": 50,
+        "pass_rate": 0.96,
+        "evidence_scope": "heldout_full",
+        "code_sha256": "e22493fa7802c3e9a04e794fb1d3a236bc1b20301e4f7b08832153a2db7eab3c",
+        "seeds": [
+          null,
+          null
+        ],
+        "path": "outputs/libero_fix_loop_eval/libero_goal_swap/put_the_bowl_on_the_stove/runs/46151595976bba27/manifest.json"
+      }
+    ],
+    "delivered_code_sha256": "e22493fa7802c3e9a04e794fb1d3a236bc1b20301e4f7b08832153a2db7eab3c",
+    "fix_code_exists": true,
+    "findings_exists": true
+  },
+  "put_the_wine_bottle_on_top_of_the_cabinet": {
+    "runs": [
+      {
+        "run_id": "2e8a3bd596136158",
+        "status": "complete",
+        "passes": 45,
+        "trials": 50,
+        "pass_rate": 0.9,
+        "evidence_scope": "heldout_full",
+        "code_sha256": "898f4a787ac4cc22b95ccf465830ea7d619fce1b5a8a4cb5335e16520074ca1f",
+        "seeds": [
+          null,
+          null
+        ],
+        "path": "outputs/libero_fix_loop_eval/libero_goal_swap/put_the_wine_bottle_on_top_of_the_cabinet/runs/2e8a3bd596136158/manifest.json"
+      }
+    ],
+    "delivered_code_sha256": "898f4a787ac4cc22b95ccf465830ea7d619fce1b5a8a4cb5335e16520074ca1f",
+    "fix_code_exists": true,
+    "findings_exists": true
+  },
+  "open_the_top_drawer_and_put_the_bowl_inside": {
+    "runs": [
+      {
+        "run_id": "7843feea08d924e1",
+        "status": "complete",
+        "passes": 41,
+        "trials": 50,
+        "pass_rate": 0.82,
+        "evidence_scope": "heldout_full",
+        "code_sha256": "1849fa549fc6406b7039dbe2b1795cc7348680cf5a520eaa427265781584ff4e",
+        "seeds": [
+          null,
+          null
+        ],
+        "path": "outputs/libero_fix_loop_eval/libero_goal_swap/open_the_top_drawer_and_put_the_bowl_inside/runs/7843feea08d924e1/manifest.json"
+      }
+    ],
+    "delivered_code_sha256": "1849fa549fc6406b7039dbe2b1795cc7348680cf5a520eaa427265781584ff4e",
+    "fix_code_exists": true,
+    "findings_exists": true
+  },
+  "put_the_bowl_on_top_of_the_cabinet": {
+    "runs": [
+      {
+        "run_id": "92ae6e3b444c078a",
+        "status": "complete",
+        "passes": 50,
+        "trials": 50,
+        "pass_rate": 1.0,
+        "evidence_scope": "heldout_full",
+        "code_sha256": "d7a74195ab8dd23481bfa41f6b21818bc845f3373ed1eee0f2ecbab234701f2b",
+        "seeds": [
+          null,
+          null
+        ],
+        "path": "outputs/libero_fix_loop_eval/libero_goal_swap/put_the_bowl_on_top_of_the_cabinet/runs/92ae6e3b444c078a/manifest.json"
+      }
+    ],
+    "delivered_code_sha256": "d7a74195ab8dd23481bfa41f6b21818bc845f3373ed1eee0f2ecbab234701f2b",
+    "fix_code_exists": true,
+    "findings_exists": true
+  },
+  "push_the_plate_to_the_front_of_the_stove": {
+    "runs": [
+      {
+        "run_id": "01fcd7ed4ac419d5",
+        "status": "complete",
+        "passes": 11,
+        "trials": 50,
+        "pass_rate": 0.22,
+        "evidence_scope": "heldout_full",
+        "code_sha256": "4ad570987115e150a2e52165e79b562d94439f2d3114a241826b7cec7efd0290",
+        "seeds": [
+          null,
+          null
+        ],
+        "path": "outputs/libero_fix_loop_eval/libero_goal_swap/push_the_plate_to_the_front_of_the_stove/runs/01fcd7ed4ac419d5/manifest.json"
+      }
+    ],
+    "delivered_code_sha256": "4ad570987115e150a2e52165e79b562d94439f2d3114a241826b7cec7efd0290",
+    "fix_code_exists": true,
+    "findings_exists": true
+  },
+  "put_the_cream_cheese_in_the_bowl": {
+    "runs": [
+      {
+        "run_id": "467081ec00c9e683",
+        "status": "complete",
+        "passes": 49,
+        "trials": 50,
+        "pass_rate": 0.98,
+        "evidence_scope": "heldout_full",
+        "code_sha256": "747fe8c2be4781d94a81401c145d5dd2c91cc487e6b96e0864187bd6e4030e17",
+        "seeds": [
+          null,
+          null
+        ],
+        "path": "outputs/libero_fix_loop_eval/libero_goal_swap/put_the_cream_cheese_in_the_bowl/runs/467081ec00c9e683/manifest.json"
+      }
+    ],
+    "delivered_code_sha256": "747fe8c2be4781d94a81401c145d5dd2c91cc487e6b96e0864187bd6e4030e17",
+    "fix_code_exists": true,
+    "findings_exists": true
+  },
+  "turn_on_the_stove": {
+    "runs": [
+      {
+        "run_id": "e628456bf5967e89",
+        "status": "complete",
+        "passes": 50,
+        "trials": 50,
+        "pass_rate": 1.0,
+        "evidence_scope": "heldout_full",
+        "code_sha256": "caa3abf3bfe06354d6f6483e4f6046bab6d9b74c110bd7eb29dd170191135f63",
+        "seeds": [
+          null,
+          null
+        ],
+        "path": "outputs/libero_fix_loop_eval/libero_goal_swap/turn_on_the_stove/runs/e628456bf5967e89/manifest.json"
+      }
+    ],
+    "delivered_code_sha256": "caa3abf3bfe06354d6f6483e4f6046bab6d9b74c110bd7eb29dd170191135f63",
+    "fix_code_exists": true,
+    "findings_exists": true
+  },
+  "put_the_bowl_on_the_plate": {
+    "runs": [
+      {
+        "run_id": "4870fdf39a8514d4",
+        "status": "complete",
+        "passes": 50,
+        "trials": 50,
+        "pass_rate": 1.0,
+        "evidence_scope": "heldout_full",
+        "code_sha256": "72f91ef04ce99976019cb1ae5f806798def13d9ef0ed20d650ed0a9d0072e2d7",
+        "seeds": [
+          null,
+          null
+        ],
+        "path": "outputs/libero_fix_loop_eval/libero_goal_swap/put_the_bowl_on_the_plate/runs/4870fdf39a8514d4/manifest.json"
+      }
+    ],
+    "delivered_code_sha256": "72f91ef04ce99976019cb1ae5f806798def13d9ef0ed20d650ed0a9d0072e2d7",
+    "fix_code_exists": true,
+    "findings_exists": true
+  },
+  "put_the_wine_bottle_on_the_rack": {
+    "runs": [
+      {
+        "run_id": "dc83e45043882f0c",
+        "status": "complete",
+        "passes": 50,
+        "trials": 50,
+        "pass_rate": 1.0,
+        "evidence_scope": "heldout_full",
+        "code_sha256": "16d3eb8d3657f71dc0580a22f3fe57fe07b4adb05393266bb339205e676cfd45",
+        "seeds": [
+          null,
+          null
+        ],
+        "path": "outputs/libero_fix_loop_eval/libero_goal_swap/put_the_wine_bottle_on_the_rack/runs/dc83e45043882f0c/manifest.json"
+      }
+    ],
+    "delivered_code_sha256": "16d3eb8d3657f71dc0580a22f3fe57fe07b4adb05393266bb339205e676cfd45",
+    "fix_code_exists": true,
+    "findings_exists": true
+  }
+}

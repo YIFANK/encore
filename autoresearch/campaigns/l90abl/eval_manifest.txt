@@ -1,0 +1,24 @@
+open_microwave_k3|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE7_open_the_microwave.bddl|open the microwave
+open_microwave_vis|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE7_open_the_microwave.bddl|open the microwave
+open_microwave_k0|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE7_open_the_microwave.bddl|open the microwave
+open_top_drawer_s1_k3|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE1_open_the_top_drawer_of_the_cabinet.bddl|open the top drawer of the cabinet
+open_top_drawer_s1_vis|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE1_open_the_top_drawer_of_the_cabinet.bddl|open the top drawer of the cabinet
+open_top_drawer_s1_k0|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE1_open_the_top_drawer_of_the_cabinet.bddl|open the top drawer of the cabinet
+open_top_drawer_s2_k3|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE2_open_the_top_drawer_of_the_cabinet.bddl|open the top drawer of the cabinet
+open_top_drawer_s2_vis|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE2_open_the_top_drawer_of_the_cabinet.bddl|open the top drawer of the cabinet
+open_top_drawer_s2_k0|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE2_open_the_top_drawer_of_the_cabinet.bddl|open the top drawer of the cabinet
+open_bottom_drawer_k3|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE1_open_the_bottom_drawer_of_the_cabinet.bddl|open the bottom drawer of the cabinet
+open_bottom_drawer_vis|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE1_open_the_bottom_drawer_of_the_cabinet.bddl|open the bottom drawer of the cabinet
+open_bottom_drawer_k0|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE1_open_the_bottom_drawer_of_the_cabinet.bddl|open the bottom drawer of the cabinet
+close_microwave_k3|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE6_close_the_microwave.bddl|close the microwave
+close_microwave_vis|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE6_close_the_microwave.bddl|close the microwave
+close_microwave_k0|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE6_close_the_microwave.bddl|close the microwave
+close_bottom_drawer_k3|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE4_close_the_bottom_drawer_of_the_cabinet.bddl|close the bottom drawer of the cabinet
+close_bottom_drawer_vis|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE4_close_the_bottom_drawer_of_the_cabinet.bddl|close the bottom drawer of the cabinet
+close_bottom_drawer_k0|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE4_close_the_bottom_drawer_of_the_cabinet.bddl|close the bottom drawer of the cabinet
+close_top_drawer_k3|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE5_close_the_top_drawer_of_the_cabinet.bddl|close the top drawer of the cabinet
+close_top_drawer_vis|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE5_close_the_top_drawer_of_the_cabinet.bddl|close the top drawer of the cabinet
+close_top_drawer_k0|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE5_close_the_top_drawer_of_the_cabinet.bddl|close the top drawer of the cabinet
+turn_on_stove_k3|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE3_turn_on_the_stove.bddl|turn on the stove
+turn_on_stove_vis|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE3_turn_on_the_stove.bddl|turn on the stove
+turn_on_stove_k0|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_90/KITCHEN_SCENE3_turn_on_the_stove.bddl|turn on the stove

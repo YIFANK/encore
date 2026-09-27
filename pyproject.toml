@@ -1,0 +1,43 @@
+[project]
+name = "heron"
+version = "0.1.0"
+description = "Encore: few-shot agentic discovery of manipulation abstractions (evaluation harness and experiment code)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.24",
+    "pydantic>=2.5",
+    "pillow>=10.0",
+    "pyyaml>=6.0",
+    "rich>=13.0",
+    "google-genai>=1.0",
+]
+
+[project.optional-dependencies]
+# Real-hardware extras — install on the robot host, not needed for mock mode.
+real = [
+    "trossen-arm>=1.8",
+    "pyrealsense2>=2.55",
+    "opencv-python>=4.9",
+]
+dev = [
+    "pytest>=8.0",
+]
+# LeRobot-format teleoperation recording (tools/collect.py, heron/record).
+record = [
+    "lerobot[dataset]>=0.6",
+]
+
+[project.scripts]
+heron = "heron.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["heron*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,258 @@
+{
+ "dir": "/mnt/data/YifanKang/robodojo/RoboDojo/eval_result/RoboDojo/arrange_largest_number/Encore/arx_x5_encore/21132407_ckpt_name=encore,action_type=ee/2026-09-17_00-27-12_516843",
+ "success_rate": 0.0,
+ "eval_time": 50,
+ "score": 25.100000000000023,
+ "details": {
+  "0": {
+   "layout_id": 0,
+   "success": false,
+   "score": 0.15
+  },
+  "1": {
+   "layout_id": 1,
+   "success": false,
+   "score": 0.15
+  },
+  "2": {
+   "layout_id": 2,
+   "success": false,
+   "score": 0.15
+  },
+  "3": {
+   "layout_id": 3,
+   "success": false,
+   "score": 0.25
+  },
+  "4": {
+   "layout_id": 4,
+   "success": false,
+   "score": 0.4
+  },
+  "5": {
+   "layout_id": 5,
+   "success": false,
+   "score": 0.3
+  },
+  "6": {
+   "layout_id": 6,
+   "success": false,
+   "score": 0.3
+  },
+  "7": {
+   "layout_id": 7,
+   "success": false,
+   "score": 0.15
+  },
+  "8": {
+   "layout_id": 8,
+   "success": false,
+   "score": 0.25
+  },
+  "9": {
+   "layout_id": 9,
+   "success": false,
+   "score": 0.15
+  },
+  "10": {
+   "layout_id": 10,
+   "success": false,
+   "score": 0.25
+  },
+  "11": {
+   "layout_id": 11,
+   "success": false,
+   "score": 0.4
+  },
+  "12": {
+   "layout_id": 12,
+   "success": false,
+   "score": 0.3
+  },
+  "13": {
+   "layout_id": 13,
+   "success": false,
+   "score": 0.15
+  },
+  "14": {
+   "layout_id": 14,
+   "success": false,
+   "score": 0.25
+  },
+  "15": {
+   "layout_id": 15,
+   "success": false,
+   "score": 0.3
+  },
+  "16": {
+   "layout_id": 16,
+   "success": false,
+   "score": 0.15
+  },
+  "17": {
+   "layout_id": 17,
+   "success": false,
+   "score": 0.15
+  },
+  "18": {
+   "layout_id": 18,
+   "success": false,
+   "score": 0.3
+  },
+  "19": {
+   "layout_id": 19,
+   "success": false,
+   "score": 0.3
+  },
+  "20": {
+   "layout_id": 20,
+   "success": false,
+   "score": 0.3
+  },
+  "21": {
+   "layout_id": 21,
+   "success": false,
+   "score": 0.3
+  },
+  "22": {
+   "layout_id": 22,
+   "success": false,
+   "score": 0.25
+  },
+  "23": {
+   "layout_id": 23,
+   "success": false,
+   "score": 0.25
+  },
+  "24": {
+   "layout_id": 24,
+   "success": false,
+   "score": 0.4
+  },
+  "25": {
+   "layout_id": 25,
+   "success": false,
+   "score": 0.15
+  },
+  "26": {
+   "layout_id": 26,
+   "success": false,
+   "score": 0.3
+  },
+  "27": {
+   "layout_id": 27,
+   "success": false,
+   "score": 0.3
+  },
+  "28": {
+   "layout_id": 28,
+   "success": false,
+   "score": 0.15
+  },
+  "29": {
+   "layout_id": 29,
+   "success": false,
+   "score": 0.3
+  },
+  "30": {
+   "layout_id": 30,
+   "success": false,
+   "score": 0.3
+  },
+  "31": {
+   "layout_id": 31,
+   "success": false,
+   "score": 0.25
+  },
+  "32": {
+   "layout_id": 32,
+   "success": false,
+   "score": 0.3
+  },
+  "33": {
+   "layout_id": 33,
+   "success": false,
+   "score": 0.3
+  },
+  "34": {
+   "layout_id": 34,
+   "success": false,
+   "score": 0.15
+  },
+  "35": {
+   "layout_id": 35,
+   "success": false,
+   "score": 0.3
+  },
+  "36": {
+   "layout_id": 36,
+   "success": false,
+   "score": 0.3
+  },
+  "37": {
+   "layout_id": 37,
+   "success": false,
+   "score": 0.15
+  },
+  "38": {
+   "layout_id": 38,
+   "success": false,
+   "score": 0.3
+  },
+  "39": {
+   "layout_id": 39,
+   "success": false,
+   "score": 0.05
+  },
+  "40": {
+   "layout_id": 40,
+   "success": false,
+   "score": 0.3
+  },
+  "41": {
+   "layout_id": 41,
+   "success": false,
+   "score": 0.4
+  },
+  "42": {
+   "layout_id": 42,
+   "success": false,
+   "score": 0.3
+  },
+  "43": {
+   "layout_id": 43,
+   "success": false,
+   "score": 0.05
+  },
+  "44": {
+   "layout_id": 44,
+   "success": false,
+   "score": 0.15
+  },
+  "45": {
+   "layout_id": 45,
+   "success": false,
+   "score": 0.3
+  },
+  "46": {
+   "layout_id": 46,
+   "success": false,
+   "score": 0.15
+  },
+  "47": {
+   "layout_id": 47,
+   "success": false,
+   "score": 0.4
+  },
+  "48": {
+   "layout_id": 48,
+   "success": false,
+   "score": 0.3
+  },
+  "49": {
+   "layout_id": 49,
+   "success": false,
+   "score": 0.3
+  }
+ }
+}

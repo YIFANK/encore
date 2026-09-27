@@ -1,0 +1,98 @@
+{
+ "open_microwave_k3": [
+  50,
+  50
+ ],
+ "open_microwave_vis": [
+  50,
+  50
+ ],
+ "open_microwave_k0": [
+  50,
+  50
+ ],
+ "open_top_drawer_s1_k3": [
+  50,
+  50
+ ],
+ "open_top_drawer_s1_vis": [
+  50,
+  50
+ ],
+ "open_top_drawer_s1_k0": [
+  50,
+  50
+ ],
+ "open_top_drawer_s2_k3": [
+  50,
+  50
+ ],
+ "open_top_drawer_s2_vis": [
+  50,
+  50
+ ],
+ "open_top_drawer_s2_k0": [
+  50,
+  50
+ ],
+ "open_bottom_drawer_k3": [
+  50,
+  50
+ ],
+ "open_bottom_drawer_vis": [
+  0,
+  50
+ ],
+ "open_bottom_drawer_k0": [
+  0,
+  50
+ ],
+ "close_microwave_k3": [
+  50,
+  50
+ ],
+ "close_microwave_vis": [
+  50,
+  50
+ ],
+ "close_microwave_k0": [
+  50,
+  50
+ ],
+ "close_bottom_drawer_k3": [
+  50,
+  50
+ ],
+ "close_bottom_drawer_vis": [
+  50,
+  50
+ ],
+ "close_bottom_drawer_k0": [
+  42,
+  50
+ ],
+ "close_top_drawer_k3": [
+  50,
+  50
+ ],
+ "close_top_drawer_vis": [
+  50,
+  50
+ ],
+ "close_top_drawer_k0": [
+  50,
+  50
+ ],
+ "turn_on_stove_k3": [
+  50,
+  50
+ ],
+ "turn_on_stove_vis": [
+  50,
+  50
+ ],
+ "turn_on_stove_k0": [
+  50,
+  50
+ ]
+}

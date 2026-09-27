@@ -1,0 +1,118 @@
+{
+ "dir": "/mnt/data/YifanKang/robodojo/RoboDojo/eval_result/RoboDojo/play_tic_tac_toe/Encore/arx_x5_encore/26408943_ckpt_name=encore,action_type=ee/2026-09-24_22-49-45_3688467",
+ "success_rate": 0.18181818181818182,
+ "eval_time": 22,
+ "score": 70.45454545454545,
+ "details": {
+  "0": {
+   "layout_id": 0,
+   "success": true,
+   "score": 1.0
+  },
+  "1": {
+   "layout_id": 1,
+   "success": false,
+   "score": 0.5
+  },
+  "2": {
+   "layout_id": 9,
+   "success": false,
+   "score": 0.75
+  },
+  "3": {
+   "layout_id": 10,
+   "success": false,
+   "score": 0.75
+  },
+  "4": {
+   "layout_id": 11,
+   "success": false,
+   "score": 0.75
+  },
+  "5": {
+   "layout_id": 16,
+   "success": false,
+   "score": 0.75
+  },
+  "6": {
+   "layout_id": 19,
+   "success": false,
+   "score": 0.5
+  },
+  "7": {
+   "layout_id": 22,
+   "success": false,
+   "score": 0.5
+  },
+  "8": {
+   "layout_id": 25,
+   "success": false,
+   "score": 0.5
+  },
+  "9": {
+   "layout_id": 26,
+   "success": false,
+   "score": 0.5
+  },
+  "10": {
+   "layout_id": 29,
+   "success": false,
+   "score": 0.5
+  },
+  "11": {
+   "layout_id": 30,
+   "success": false,
+   "score": 0.5
+  },
+  "12": {
+   "layout_id": 33,
+   "success": true,
+   "score": 1.0
+  },
+  "13": {
+   "layout_id": 34,
+   "success": false,
+   "score": 0.75
+  },
+  "14": {
+   "layout_id": 35,
+   "success": false,
+   "score": 0.75
+  },
+  "15": {
+   "layout_id": 36,
+   "success": false,
+   "score": 0.5
+  },
+  "16": {
+   "layout_id": 39,
+   "success": false,
+   "score": 0.75
+  },
+  "17": {
+   "layout_id": 40,
+   "success": true,
+   "score": 1.0
+  },
+  "18": {
+   "layout_id": 42,
+   "success": false,
+   "score": 0.75
+  },
+  "19": {
+   "layout_id": 43,
+   "success": true,
+   "score": 1.0
+  },
+  "20": {
+   "layout_id": 44,
+   "success": false,
+   "score": 0.75
+  },
+  "21": {
+   "layout_id": 46,
+   "success": false,
+   "score": 0.75
+  }
+ }
+}

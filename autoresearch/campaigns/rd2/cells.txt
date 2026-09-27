@@ -1,0 +1,12 @@
+plug_in_charger|400|Plug the charger into the power strip.
+insert_tubes|500|Insert the three tubes into the rack one by one.
+push_T|600|Push the T-shaped block to align it precisely with the gray T-shaped pad.
+swap_T|400|Pick up the two T-shaped blocks, swap their positions, and place them back with the correct orientations.
+stack_blocks|550|Stack the three blocks with different textures.
+press_by_number|700|Press the two red buttons the required number of times according to the number cards, then press the blue button to confirm.
+make_toast|1400|Pick up two slices of bread, place them into the toaster, and press the lever down.
+store_laptop_and_headphones|800|Hang the headphones on the headphone stand, close the laptop, then place it into the vertical laptop stand.
+play_tic_tac_toe|1100|Play tic-tac-toe as the first player and fill the board with the opponent.
+insert_key|300|Pick up the key, hand it over to the other hand, insert it into the keyhole, then turn it.
+fasten_screws|1900|Insert and tighten each screw into the nut of the same color.
+hang_mugs|800|Hang all the mugs on the mug rack.

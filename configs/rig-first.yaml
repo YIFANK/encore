@@ -1,0 +1,104 @@
+# cam_low restored 2026-08-04 after full replug; stable pair = high + low
+mode: real
+on_criterion: support
+arms:
+  right:
+    ip: 192.168.10.4
+    approach_rvec:
+    - 0.0
+    - 1.5708
+    - 0.0
+    t_world_base:
+    - - 1
+      - 0
+      - 0
+      - 0
+    - - 0
+      - 1
+      - 0
+      - 0
+    - - 0
+      - 0
+      - 1
+      - 0
+    - - 0
+      - 0
+      - 0
+      - 1
+cameras:
+  cam_high:
+    index: 1
+    serial: '218622271652'
+    kind: overhead
+    homography_file: calibration/cam_high_homography.npz
+    depth_server: http://127.0.0.1:8766
+    # extrinsics_file dropped 2026-08-10: the pose now derives from the
+    # board-stitched homography (1.1 mm on the plane); the measured file
+    # plateaued at 12.8 mm against it and would override the derivation.
+  # cam_low: no extrinsics, no homography — it has never contributed a
+  # measurement and it costs a depth stream. Kept here as a record.
+  # cam_low:
+  #   index: 1
+  #   serial: '230322270466'
+  #   kind: side
+  #   depth_server: http://127.0.0.1:8766
+  cam_right_wrist:
+    serial: '218622272313'
+    kind: wrist
+    arm: right
+    depth_server: http://127.0.0.1:8766
+    # Hand-eye, measured 2026-07-30: intrinsics RMS 0.19 px, 5.5 mm consistency.
+    t_ee_cam:
+      [[-0.00162345, -0.32907813, 0.94430130, -0.10105035],
+      [-0.99999275, -0.00271710, -0.00266607, 0.01030423],
+      [0.00344311, -0.94429879, -0.32907133, 0.05363632],
+      [0.00000000, 0.00000000, 0.00000000, 1.00000000]]
+sam_url: http://127.0.0.1:8771
+contact_descend: false
+contact_descend_place: false
+table_z: -0.015
+safety:
+  workspace_x:
+  - 0.15
+  - 0.48
+  workspace_y:
+  - -0.35
+  - 0.35
+  workspace_z:
+  - 0.000
+  - 0.18
+  max_step_m: 0.6
+  min_move_seconds: 0.4
+  max_tool_speed_mps: 0.12
+  speed_scale: 0.6
+  gripper_effort_limit: 20.0
+  confirm_actions: false
+  dry_run: false
+budgets:
+  max_steps_executed: 40
+  max_edits: 12
+  max_repairs_per_step: 3
+  # 900, not 300: a stacking episode that recovers from one mis-grounded
+  # place spends ~90 s on the repair loop and was killed 20 s before its
+  # own success verification (watched happen, 2026-08-10).
+  wall_clock_s: 900
+  verify_max_age_s: 25
+models:
+  er_model: gemini-robotics-er-2-preview
+  thinking_ground: minimal
+  thinking_verify: low
+  thinking_plan: low
+  thinking_repair: low
+disable_skills:
+- tamp_pick
+- tamp_place
+- vla
+episodes_dir: episodes
+memory_dir: memory_store
+grounding_mode: point
+active_arms: [right]
+grasp_service_url: null
+
+# Operator dialogue: brief before motion, corrections replan
+interactive: true
+speak: true

@@ -1,0 +1,16 @@
+ablA_goal_turn_on_stove|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/turn_on_the_stove.bddl|turn on the stove
+ablB_goal_turn_on_stove|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/turn_on_the_stove.bddl|turn on the stove
+ablC_goal_turn_on_stove|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/turn_on_the_stove.bddl|turn on the stove
+ablA_goal_bowl_on_plate|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/put_the_bowl_on_the_plate.bddl|put the bowl on the plate
+ablB_goal_bowl_on_plate|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/put_the_bowl_on_the_plate.bddl|put the bowl on the plate
+ablC_goal_bowl_on_plate|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/put_the_bowl_on_the_plate.bddl|put the bowl on the plate
+ablA_goal_open_middle_drawer|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/open_the_middle_drawer_of_the_cabinet.bddl|open the middle drawer of the cabinet
+ablB_goal_open_middle_drawer|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/open_the_middle_drawer_of_the_cabinet.bddl|open the middle drawer of the cabinet
+ablC_goal_open_middle_drawer|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/open_the_middle_drawer_of_the_cabinet.bddl|open the middle drawer of the cabinet
+ablB2_goal_open_middle_drawer|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/open_the_middle_drawer_of_the_cabinet.bddl|open the middle drawer of the cabinet
+ablC_goal_open_top_drawer_put_bowl|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/open_the_top_drawer_and_put_the_bowl_inside.bddl|open the top drawer and put the bowl inside
+ablC_goal_push_plate_front_stove|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/push_the_plate_to_the_front_of_the_stove.bddl|push the plate to the front of the stove
+ablC_goal_put_bowl_on_stove|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/put_the_bowl_on_the_stove.bddl|put the bowl on the stove
+ablC_goal_put_bowl_top_cabinet|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/put_the_bowl_on_top_of_the_cabinet.bddl|put the bowl on top of the cabinet
+ablC_goal_put_cream_cheese_in_bowl|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/put_the_cream_cheese_in_the_bowl.bddl|put the cream cheese in the bowl
+ablC_goal_put_wine_on_rack|/mnt/data/YifanKang/LIBERO-PRO/libero/libero/bddl_files/libero_goal/put_the_wine_bottle_on_the_rack.bddl|put the wine bottle on the rack
