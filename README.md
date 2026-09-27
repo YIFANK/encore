@@ -1,7 +1,6 @@
 # Encore: experiment code
 
-Code for *Encore: Few-Shot Agentic Discovery of Manipulation Strategies*
-(CoRL 2026 Workshop on Agentic Robotics). A coding agent reads a few
+Code for *Encore: Few-Shot Agentic Discovery of Manipulation Strategies*. A coding agent reads a few
 demonstrations, writes a policy program against a fixed perception-and-action
 API, develops it on a disjoint band of initial states, and freezes it; the
 frozen program is then evaluated once on sealed states, judged only by the

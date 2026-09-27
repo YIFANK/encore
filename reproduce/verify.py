@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Recompute every quantitative claim of the Encore CoRL 2026 workshop paper from
+"""Recompute every quantitative claim of the Encore paper from
 files in this repository, and check that each bundled frozen program is the one
 that was evaluated.
 
@@ -249,6 +249,19 @@ if os.path.isfile(PAPER):
             "stack three blocks & $\\mathbf{43}$ & $22$ & $0$ & $10$", "insert tubes & $14$ & $\\mathbf{34}$ & $0$ & $2$",
             "tic-tac-toe & $5$ & $0$ & $\\mathbf{21}$ & $4$", "10 tasks & $\\mathbf{95}$ & $40$ & $0$"]
     check("key numbers present verbatim in the paper source", [m for m in must if m not in tex], [])
+    # the appendix listings are the sealed drawer programs minus their PROVENANCE dict
+    def strip_prov(t):
+        i = t.index("PROVENANCE = {"); depth = 0
+        for j in range(t.index("{", i), len(t)):
+            depth += t[j] == "{"; depth -= t[j] == "}"
+            if depth == 0: break
+        end = t.index("\n", j) + 1
+        return t[:i] + t[end + (t[end:end + 1] == "\n"):]
+    lst = os.path.join(os.path.dirname(PAPER), "listings")
+    bad = [a for a in ("k0", "k3") if not os.path.isfile(f"{lst}/program_{a}.py") or
+           open(f"{lst}/program_{a}.py").read() != strip_prov(open(os.path.join(
+               SEALED, "libero_pro_clean", f"goal_open_middle_drawer_task_{a}", "program.py")).read())]
+    check("appendix listings equal the sealed drawer programs (mismatches)", bad, [])
 else:
     print(f"[info] paper source not found at {PAPER}; text cross-check skipped")
 

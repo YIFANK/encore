@@ -1,8 +1,8 @@
-# Reproducing the Encore CoRL 2026 workshop results
+# Reproducing the Encore results
 
 This directory contains everything needed to check and re-run the
 simulation results of *Encore: Few-Shot Agentic Discovery of Manipulation
-Strategies* (CoRL 2026 Workshop on Agentic Robotics).
+Strategies*.
 
 - The repository root is the paper's experiment code (harness, distillers,
   rig tools, campaigns). The harness exactly as it ran on the evaluation box is
