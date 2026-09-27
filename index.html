@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ENCORE: Few-Shot Agentic Discovery of Manipulation Strategies</title>
+<meta name="description" content="A coding agent reads a few demonstrations, writes a robot policy program, and freezes it before a sealed evaluation.">
+<style>
+:root {
+  --bg:#ffffff; --panel:#f7f8fa; --ink:#1b1c1e; --ink2:#4b4f55; --ink3:#868b92;
+  --line:#e3e5e8; --accent:#1565c0;
+  --sans: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg:#131416; --panel:#1b1d20; --ink:#eceef0; --ink2:#b3b7bc; --ink3:#7f848a; --line:#2d3034; --accent:#7fb2f0;
+} }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.6;
+  -webkit-font-smoothing:antialiased; padding:48px 16px 80px; }
+main { max-width:960px; margin:0 auto; }
+header { text-align:center; }
+h1 { font-size:36px; line-height:1.2; letter-spacing:-.02em; margin:0 0 18px; font-weight:700; text-wrap:balance; }
+h1 .name { color:var(--accent); }
+.authors { font-size:18px; margin:0; }
+.authors a { color:var(--ink); text-decoration:none; }
+.affil { font-size:15px; color:var(--ink3); margin:4px 0 0; }
+.venue { font-size:15px; color:var(--ink2); margin:10px 0 0; }
+.links { display:flex; justify-content:center; gap:10px; margin:20px 0 0; flex-wrap:wrap; }
+.links a { font-size:14px; font-weight:600; color:#fff; background:#24292f; border-radius:999px;
+  padding:8px 18px; text-decoration:none; }
+.links a.off { background:var(--line); color:var(--ink3); pointer-events:none; }
+.insight { max-width:760px; margin:30px auto 0; font-size:19px; line-height:1.5; text-align:center; text-wrap:balance; }
+.chips { display:flex; justify-content:center; flex-wrap:wrap; gap:9px; margin:22px 0 0; }
+.chip { font-size:13px; font-family:var(--mono); color:var(--ink2); border:1px solid var(--line);
+  background:var(--panel); border-radius:999px; padding:6px 14px; }
+.chip b { color:var(--ink); }
+section { margin-top:56px; }
+h2 { font-size:24px; letter-spacing:-.015em; font-weight:650; margin:0 0 18px; text-align:center; }
+figure { margin:0; }
+figure img, figure video { display:block; width:100%; height:auto; border-radius:8px; border:1px solid var(--line); background:#fff; }
+figure .narrow { max-width:720px; margin:0 auto; }
+figure img.goal { max-width:380px; margin:0 auto; }
+figcaption { font-size:14.5px; color:var(--ink2); margin:12px auto 0; max-width:780px; text-align:center; }
+figcaption b { color:var(--ink); }
+.abs { max-width:780px; margin:0 auto; font-size:16px; color:var(--ink2); text-align:justify; hyphens:auto; }
+.two { display:grid; grid-template-columns:1.9fr 1fr; gap:22px; align-items:center; }
+pre { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; font-size:12.5px;
+  overflow-x:auto; font-family:var(--mono); color:var(--ink2); }
+footer { margin-top:60px; text-align:center; font-size:13px; color:var(--ink3); }
+@media (max-width:720px) { h1 { font-size:27px; } .two { grid-template-columns:1fr; } .insight { font-size:17px; } }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1><span class="name">ENCORE</span>: Few-Shot Agentic Discovery<br>of Manipulation Strategies</h1>
+  <p class="authors">Yifan Kang<sup>1</sup> &nbsp;&middot;&nbsp; Bangya Liu<sup>2</sup> &nbsp;&middot;&nbsp; Zihan Wang<sup>3</sup> &nbsp;&middot;&nbsp; Zhiwen Fan<sup>4</sup></p>
+  <p class="affil"><sup>1</sup>MIT &nbsp; <sup>2</sup>University of Wisconsin&ndash;Madison &nbsp; <sup>3</sup>2077AI &nbsp; <sup>4</sup>Texas A&amp;M University</p>
+  <div class="links">
+    <a class="off" href="#">Paper (arXiv, soon)</a>
+    <a href="https://github.com/YIFANK/encore">Code</a>
+  </div>
+  <p class="insight">Demonstrations as evidence, not training data: the agent reads how to grasp and writes it into a policy program.</p>
+  <div class="chips">
+    <span class="chip"><b>96.3%</b> LIBERO-PRO perturbations</span>
+    <span class="chip"><b>89.3%</b> ASPIRE, same model</span>
+    <span class="chip">first program: <b>29/60</b> vs <b>1/60</b> cells</span>
+    <span class="chip">real robot <b>9/10</b>, <b>9/10</b></span>
+  </div>
+</header>
+
+<section>
+  <figure>
+    <video src="media/teaser.mp4" autoplay muted loop playsinline></video>
+    <figcaption>Frozen programs on sealed episodes, no model calls at run time.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Abstract</h2>
+  <p class="abs">Coding agents can now write, run, and debug programs with little human help. Robot tasks, however, are usually specified by a sentence that leaves out how to grasp, in what order to make contact, and what the result should look like, and an agent given only the sentence must find these details by trial and error. We introduce ENCORE, which gives the agent a few demonstrations as evidence to read rather than as training data. A deterministic builder distills each demonstration into a pack of multi-view keyframes, gripper events, frame strips, and the full trajectory. A coding agent studies the pack, writes a policy program against a fixed perception and action API, checks it with its own sensors over a few development rollouts, and freezes it before a sealed evaluation that never reveals the success signal. On LIBERO-PRO, the agent's first program already succeeds in half of the perturbed tasks with demonstrations and in one task without them, and the frozen programs outperform the strongest prior agentic system run with the same language model (96.3% against 89.3%). On RoboDojo tasks whose instructions leave the goal unstated, no program succeeds without demonstrations. ENCORE also runs on a real bimanual robot, learning cube handover and cup inversion from five demonstrations each.</p>
+</section>
+
+<section>
+  <h2>Method</h2>
+  <figure>
+    <img src="media/method.png" alt="ENCORE overview: demonstration pack, agentic coding loop, robot execution">
+    <figcaption>The agent queries the pack, writes a program, checks it with its own sensors, and freezes it.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>The first program carries the strategy</h2>
+  <figure>
+    <img src="media/deveff.png" alt="Development success by program version, K=3 vs K=0">
+    <figcaption>First program: <b>41%</b> development success with demonstrations, <b>1%</b> without.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>A strategy the agent could not find alone</h2>
+  <figure>
+    <video class="narrow" src="media/drawer.mp4" autoplay muted loop playsinline></video>
+    <figcaption>The demonstrations open a different drawer, but show the pull that works: <b>50/50</b> with them, <b>0/50</b> without.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Composing demonstrated skills</h2>
+  <figure>
+    <img class="narrow" src="media/crossskill.jpg" alt="Two demonstrated skills recombined into a new task">
+    <figcaption>Two packs, neither showing the goal; the sentence picks which half of each to reuse.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>LIBERO-PRO</h2>
+  <figure>
+    <img src="media/bars.png" alt="LIBERO-PRO success per suite and axis">
+    <figcaption><b>Pos</b> moves objects; <b>Task</b> rewrites the sentence.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>RoboDojo</h2>
+  <figure>
+    <video src="media/robodojo.mp4" autoplay muted loop playsinline></video>
+    <figcaption>When the sentence leaves the goal unstated, no program succeeds without demonstrations.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Real robot</h2>
+  <div class="two">
+    <figure><img src="media/flipfig.jpg" alt="Cup inversion: demonstration, agent reading, frozen program"></figure>
+    <figure><img class="goal" src="media/rigtasks.jpg" alt="Goal states of cube handover and cup inversion"></figure>
+  </div>
+  <figcaption>Five demonstrations each. Cup inversion <b>9/10</b>, cube handover <b>9/10</b>.</figcaption>
+</section>
+
+<section>
+  <h2>BibTeX</h2>
+<pre>@article{kang2026encore,
+  title     = {ENCORE: Few-Shot Agentic Discovery of Manipulation Strategies},
+  author    = {Kang, Yifan and Liu, Bangya and Wang, Zihan and Fan, Zhiwen},
+  journal   = {arXiv preprint},
+  year      = {2026}
+}</pre>
+</section>
+
+</main>
+</body>
+</html>
