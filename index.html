@@ -49,6 +49,13 @@ figcaption { font-size:14.5px; color:var(--ink2); margin:12px auto 0; max-width:
 figcaption b { color:var(--ink); }
 .abs { max-width:780px; margin:0 auto; font-size:16px; color:var(--ink2); text-align:justify; hyphens:auto; }
 .two { display:grid; grid-template-columns:1.9fr 1fr; gap:22px; align-items:center; }
+.gallery { margin-left:calc(50% - 50vw); width:100vw; overflow:hidden; }
+.gallery .row { overflow:hidden; margin-bottom:4px; }
+.gallery .track { display:flex; width:max-content; animation:gallery-scroll linear infinite; }
+.gallery .track.rev { animation-direction:reverse; }
+.gallery video { display:block; height:118px; width:auto; }
+@keyframes gallery-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .gallery .track { animation:none; } }
 pre { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; font-size:12.5px;
   overflow-x:auto; font-family:var(--mono); color:var(--ink2); }
 footer { margin-top:60px; text-align:center; font-size:13px; color:var(--ink3); }
@@ -62,10 +69,10 @@ footer { margin-top:60px; text-align:center; font-size:13px; color:var(--ink3); 
   <p class="authors">Yifan Kang<sup>1</sup> &nbsp;&middot;&nbsp; Zihan Wang<sup>2</sup> &nbsp;&middot;&nbsp; Zhiwen Fan<sup>3</sup> &nbsp;&middot;&nbsp; Bangya Liu<sup>4</sup></p>
   <p class="affil"><sup>1</sup>MIT &nbsp; <sup>2</sup>2077AI &nbsp; <sup>3</sup>Texas A&amp;M University &nbsp; <sup>4</sup>University of Wisconsin&ndash;Madison</p>
   <div class="logos">
-    <img src="media/logos/mit.png" alt="MIT">
-    <img src="media/logos/2077ai_dark.png" alt="2077AI">
-    <img src="media/logos/tamu.png" alt="Texas A&amp;M University">
-    <img src="media/logos/uw.png" alt="University of Wisconsin&ndash;Madison">
+    <img src="media/logos/mit.png?v=4" alt="MIT">
+    <img src="media/logos/2077ai_dark.png?v=4" alt="2077AI">
+    <img src="media/logos/tamu.png?v=4" alt="Texas A&amp;M University">
+    <img src="media/logos/uw.png?v=4" alt="University of Wisconsin&ndash;Madison">
   </div>
   <div class="links">
     <a class="off" href="#">Paper (arXiv, soon)</a>
@@ -75,7 +82,7 @@ footer { margin-top:60px; text-align:center; font-size:13px; color:var(--ink3); 
 
 <section>
   <figure>
-    <video src="media/teaser.mp4" autoplay muted loop playsinline></video>
+    <video src="media/teaser.mp4?v=4" autoplay muted loop playsinline></video>
   </figure>
 </section>
 
@@ -87,7 +94,7 @@ footer { margin-top:60px; text-align:center; font-size:13px; color:var(--ink3); 
 <section>
   <h2>Method</h2>
   <figure>
-    <img src="media/method.png" alt="ENCORE overview: demonstration pack, agentic coding loop, robot execution">
+    <img src="media/method.png?v=4" alt="ENCORE overview: demonstration pack, agentic coding loop, robot execution">
     <figcaption>The agent queries the pack, writes a program, checks it with its own sensors, and freezes it.</figcaption>
   </figure>
 </section>
@@ -95,7 +102,7 @@ footer { margin-top:60px; text-align:center; font-size:13px; color:var(--ink3); 
 <section>
   <h2>The first program carries the strategy</h2>
   <figure>
-    <img src="media/deveff.png" alt="Development success by program version, K=3 vs K=0">
+    <img src="media/deveff.png?v=4" alt="Development success by program version, K=3 vs K=0">
     <figcaption>First program: <b>41%</b> development success with demonstrations, <b>1%</b> without.</figcaption>
   </figure>
 </section>
@@ -103,7 +110,7 @@ footer { margin-top:60px; text-align:center; font-size:13px; color:var(--ink3); 
 <section>
   <h2>A strategy the agent could not find alone</h2>
   <figure>
-    <video class="narrow" src="media/drawer.mp4" autoplay muted loop playsinline></video>
+    <video class="narrow" src="media/drawer.mp4?v=4" autoplay muted loop playsinline></video>
     <figcaption>The demonstrations open a different drawer, but show the pull that works: <b>50/50</b> with them, <b>0/50</b> without.</figcaption>
   </figure>
 </section>
@@ -111,7 +118,7 @@ footer { margin-top:60px; text-align:center; font-size:13px; color:var(--ink3); 
 <section>
   <h2>Composing demonstrated skills</h2>
   <figure>
-    <img class="narrow" src="media/crossskill.jpg" alt="Two demonstrated skills recombined into a new task">
+    <img class="narrow" src="media/crossskill.jpg?v=4" alt="Two demonstrated skills recombined into a new task">
     <figcaption>Two packs, neither showing the goal; the sentence picks which half of each to reuse.</figcaption>
   </figure>
 </section>
@@ -119,7 +126,7 @@ footer { margin-top:60px; text-align:center; font-size:13px; color:var(--ink3); 
 <section>
   <h2>LIBERO-PRO</h2>
   <figure>
-    <img src="media/bars.png" alt="LIBERO-PRO success per suite and axis">
+    <img src="media/bars.png?v=4" alt="LIBERO-PRO success per suite and axis">
     <figcaption><b>Pos</b> moves objects; <b>Task</b> rewrites the sentence.</figcaption>
   </figure>
 </section>
@@ -127,7 +134,7 @@ footer { margin-top:60px; text-align:center; font-size:13px; color:var(--ink3); 
 <section>
   <h2>RoboDojo</h2>
   <figure>
-    <video src="media/robodojo.mp4" autoplay muted loop playsinline></video>
+    <video src="media/robodojo.mp4?v=4" autoplay muted loop playsinline></video>
     <figcaption>When the sentence leaves the goal unstated, no program succeeds without demonstrations.</figcaption>
   </figure>
 </section>
@@ -135,16 +142,19 @@ footer { margin-top:60px; text-align:center; font-size:13px; color:var(--ink3); 
 <section>
   <h2>Real robot</h2>
   <div class="two">
-    <figure><img src="media/flipfig.jpg" alt="Cup inversion: demonstration, agent reading, frozen program"></figure>
-    <figure><img class="goal" src="media/rigtasks.jpg" alt="Goal states of cube handover and cup inversion"></figure>
+    <figure><img src="media/flipfig.jpg?v=4" alt="Cup inversion: demonstration, agent reading, frozen program"></figure>
+    <figure><img class="goal" src="media/rigtasks.jpg?v=4" alt="Goal states of cube handover and cup inversion"></figure>
   </div>
   <figcaption>Five demonstrations each. Cup inversion <b>9/10</b>, cube handover <b>9/10</b>.</figcaption>
 </section>
 
-<section>
-  <figure>
-    <video src="media/wall.mp4" autoplay muted loop playsinline></video>
-  </figure>
+<section class="gallery">
+    <div class="row"><div class="track" style="animation-duration:60s"><video src="media/gallery/row0.mp4?v=4" autoplay muted loop playsinline></video><video src="media/gallery/row0.mp4?v=4" autoplay muted loop playsinline></video></div></div>
+    <div class="row"><div class="track rev" style="animation-duration:80s"><video src="media/gallery/row1.mp4?v=4" autoplay muted loop playsinline></video><video src="media/gallery/row1.mp4?v=4" autoplay muted loop playsinline></video></div></div>
+    <div class="row"><div class="track" style="animation-duration:85s"><video src="media/gallery/row2.mp4?v=4" autoplay muted loop playsinline></video><video src="media/gallery/row2.mp4?v=4" autoplay muted loop playsinline></video></div></div>
+    <div class="row"><div class="track rev" style="animation-duration:90s"><video src="media/gallery/row3.mp4?v=4" autoplay muted loop playsinline></video><video src="media/gallery/row3.mp4?v=4" autoplay muted loop playsinline></video></div></div>
+    <div class="row"><div class="track" style="animation-duration:95s"><video src="media/gallery/row4.mp4?v=4" autoplay muted loop playsinline></video><video src="media/gallery/row4.mp4?v=4" autoplay muted loop playsinline></video></div></div>
+    <div class="row"><div class="track rev" style="animation-duration:100s"><video src="media/gallery/row5.mp4?v=4" autoplay muted loop playsinline></video><video src="media/gallery/row5.mp4?v=4" autoplay muted loop playsinline></video></div></div>
 </section>
 
 <section>
