@@ -49,11 +49,11 @@ figcaption { font-size:14.5px; color:var(--ink2); margin:12px auto 0; max-width:
 figcaption b { color:var(--ink); }
 .abs { max-width:780px; margin:0 auto; font-size:16px; color:var(--ink2); text-align:justify; hyphens:auto; }
 .two { display:grid; grid-template-columns:1.9fr 1fr; gap:22px; align-items:center; }
-.gallery { margin-left:calc(50% - 50vw); width:100vw; overflow:hidden; }
-.gallery .row { overflow:hidden; margin-bottom:4px; }
+.gallery { overflow:hidden; border-radius:8px; }
+.gallery .row { overflow:hidden; margin-bottom:2px; }
 .gallery .track { display:flex; width:max-content; animation:gallery-scroll linear infinite; }
 .gallery .track.rev { animation-direction:reverse; }
-.gallery video { display:block; height:118px; width:auto; }
+.gallery video { display:block; height:94px; width:auto; }
 @keyframes gallery-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .gallery .track { animation:none; } }
 pre { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; font-size:12.5px;
@@ -66,13 +66,12 @@ footer { margin-top:60px; text-align:center; font-size:13px; color:var(--ink3); 
 <main>
 <header>
   <h1><span class="name">ENCORE</span>: Few-Shot Agentic Discovery<br>of Manipulation Strategies</h1>
-  <p class="authors">Yifan Kang<sup>1</sup> &nbsp;&middot;&nbsp; Zihan Wang<sup>2</sup> &nbsp;&middot;&nbsp; Zhiwen Fan<sup>3</sup> &nbsp;&middot;&nbsp; Bangya Liu<sup>4</sup></p>
-  <p class="affil"><sup>1</sup>MIT &nbsp; <sup>2</sup>2077AI &nbsp; <sup>3</sup>Texas A&amp;M University &nbsp; <sup>4</sup>University of Wisconsin&ndash;Madison</p>
+  <p class="authors">Yifan Kang<sup>1</sup> &nbsp;&middot;&nbsp; Zihan Wang<sup>2</sup> &nbsp;&middot;&nbsp; Zhiwen Fan<sup>3</sup> &nbsp;&middot;&nbsp; Bangya Liu<sup>2</sup></p>
+  <p class="affil"><sup>1</sup>MIT &nbsp; <sup>2</sup>2077AI &nbsp; <sup>3</sup>Texas A&amp;M University</p>
   <div class="logos">
     <img src="media/logos/mit.png?v=4" alt="MIT">
     <img src="media/logos/2077ai_dark.png?v=4" alt="2077AI">
     <img src="media/logos/tamu.png?v=4" alt="Texas A&amp;M University">
-    <img src="media/logos/uw.png?v=4" alt="University of Wisconsin&ndash;Madison">
   </div>
   <div class="links">
     <a class="off" href="#">Paper (arXiv, soon)</a>
@@ -82,7 +81,7 @@ footer { margin-top:60px; text-align:center; font-size:13px; color:var(--ink3); 
 
 <section>
   <figure>
-    <video src="media/teaser.mp4?v=4" autoplay muted loop playsinline></video>
+    <video src="media/teaser.mp4?v=5" autoplay muted loop playsinline></video>
   </figure>
 </section>
 
