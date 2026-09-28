@@ -16,28 +16,18 @@ frozen program and per-episode result the paper reports.
 
 ## Reproduce the results
 
-There are three levels, from a one-minute check to a full rerun.
+Every program the agents wrote and froze is in this repository, so you can run
+them directly instead of asking an agent to rediscover them.
 
 | Level | What it does | Needs | Time |
 |---|---|---|---|
-| **1. Check the numbers** | Recomputes every number in the paper from the saved results | Python 3, nothing else | about a minute |
-| **2. Re-evaluate a program** | Runs a frozen program again on its 50 held-out episodes | LIBERO-PRO or RoboDojo, a GPU | minutes to hours per program |
-| **3. Rerun the pipeline** | Builds packs, lets a fresh agent develop a program, evaluates it | Level 2 plus Claude Code | about an hour per cell |
+| **1. Run a frozen program** | Evaluates a saved program on its 50 held-out episodes | LIBERO-PRO or RoboDojo, a GPU | minutes to hours per program |
+| **2. Rerun the pipeline** | Builds packs, lets a fresh agent develop a program, evaluates it | Level 1 plus Claude Code | about an hour per cell |
 
-### 1. Check the numbers
-
-```bash
-python3 reproduce/verify.py
-```
-
-The last line should read `50/50 claims reproduced`. The script also checks
-that each saved program matches the hash recorded before its evaluation ran.
-Details are in [`reproduce/README.md`](reproduce/README.md).
-
-### 2. Re-evaluate a frozen program
+### 1. Run a frozen program
 
 Every evaluated program is in `reproduce/sealed/<experiment>/<cell>/program.py`,
-next to its per-episode results. After [setup](#setup):
+next to its per-episode results (see [`reproduce/README.md`](reproduce/README.md)). After [setup](#setup):
 
 ```bash
 # LIBERO-PRO
@@ -55,7 +45,7 @@ env -u PYTHONPATH .venv/bin/python tools/fair_run_robodojo.py --task <task> \
 The BDDL file and sentence for each LIBERO-PRO cell are listed in
 `autoresearch/campaigns/c2clean/eval_manifest.txt`.
 
-### 3. Rerun the whole pipeline
+### 2. Rerun the whole pipeline
 
 Each experiment lives in `autoresearch/campaigns/<name>/` and runs in four steps:
 
@@ -66,7 +56,7 @@ Each experiment lives in `autoresearch/campaigns/<name>/` and runs in four steps
 4. **Evaluate once**: `run_eval.sh` records the program's hash, then runs the held-out evaluation.
 
 Agents are not deterministic, so a rerun produces different programs and
-slightly different numbers. Levels 1 and 2 reproduce the paper's exact figures.
+slightly different numbers. Running the saved programs (level 1) reproduces the paper's figures.
 
 ---
 
@@ -90,7 +80,7 @@ slightly different numbers. Levels 1 and 2 reproduce the paper's exact figures.
 
 | Folder | Contents |
 |---|---|
-| `reproduce/` | Saved programs and results, and `verify.py` |
+| `reproduce/` | Every frozen program and its per-episode results |
 | `tools/fair_run.py`, `tools/fair_client.py` | The evaluation harness. The program runs in its own process and reaches the simulator only through the API; no object poses or success signal cross that boundary. |
 | `tools/fair_run_robodojo.py`, `tools/robodojo/` | The same harness for RoboDojo, and its installer |
 | `tools/fair_pack*.py`, `tools/strip_pack.py` | Turn demonstrations into packs: keyframes, gripper events, frame strips, trajectories |
