@@ -21,8 +21,13 @@ for i, (name, k3, im, k0) in enumerate(ROWS):
     if im is not None:
         ax.barh(y, im, h, color=CI, label="images only" if i == 4 else None)
     ax.barh(y - h, k0, h, color=C0, label="K=0" if i == 0 else None)
-    for dy, v in ((h, k3), (0, im), (-h, k0)):
-        if v is not None:
+    for dy, v, col in ((h, k3, C3), (0, im, CI), (-h, k0, C0)):
+        if v is None:
+            ax.text(0.6, y + dy, "not run", va="center", fontsize=8, color="#9aa3ad", style="italic")
+        elif v == 0:
+            ax.plot([0, 0.5], [y + dy, y + dy], color=col, lw=6, solid_capstyle="butt")
+            ax.text(1.2, y + dy, "0", va="center", fontsize=8.5, color="#444")
+        else:
             ax.text(v + 0.8, y + dy, str(v), va="center", fontsize=8.5, color="#444")
 ax.text(0, ys[0] + 0.62, "Goal unstated in the sentence", fontsize=10, color="#16181b", fontweight="bold", va="bottom")
 ax.text(0, ys[4] + 0.62, "Contact-sensitive", fontsize=10, color="#16181b", fontweight="bold", va="bottom")
