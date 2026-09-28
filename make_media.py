@@ -63,8 +63,8 @@ for fa, fb in zip(a, b):
     c = Image.new("RGB", (2 * S + 12, S + 46), (255, 255, 255))
     c.paste(fa, (0, 46)); c.paste(fb, (S + 12, 46))
     d = ImageDraw.Draw(c); f = ImageFont.truetype(F_B, 24)
-    d.text((8, 10), "K=0: opens the middle and top drawers", font=f, fill=(90, 90, 90))
-    d.text((S + 20, 10), "K=3: opens the bottom drawer", font=f, fill=(21, 101, 192))
+    d.text((10, 10), "K=0  ·  0/50", font=f, fill=(90, 90, 90))
+    d.text((S + 22, 10), "K=3  ·  50/50", font=f, fill=(21, 101, 192))
     pair.append(c)
 write(f"{OUT}/drawer.mp4", pair, crf=26)
 
