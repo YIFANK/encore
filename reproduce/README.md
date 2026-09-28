@@ -21,9 +21,10 @@ python3 reproduce/verify.py
 ```
 
 Standard library only. It recomputes each quantitative claim of the paper from
-the bundled per-episode results and prints `51/51 claims reproduced`; with the paper
-source at `../paper_ws_corl/main.tex` (or `PAPER_TEX=`) it also checks that the key
-numbers appear verbatim in the text. It also
+the bundled per-episode results and prints `50/50 claims reproduced`. Given the
+paper source (`PAPER_TEX=path/to/main.tex`), it adds two checks: the key numbers
+appear verbatim in the text, and the appendix program listings match the saved
+programs. It also
 checks that every bundled program has the md5 recorded in `MANIFEST.tsv`, and
 for 279 of the 319 evaluations that this md5 equals the one written to the
 campaign's freeze record *before* the sealed evaluation ran. The remaining 40

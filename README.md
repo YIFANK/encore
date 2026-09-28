@@ -1,101 +1,146 @@
-# Encore: experiment code
+# ENCORE
 
-Code for *Encore: Few-Shot Agentic Discovery of Manipulation Strategies*. A coding agent reads a few
-demonstrations, writes a policy program against a fixed perception-and-action
-API, develops it on a disjoint band of initial states, and freezes it; the
-frozen program is then evaluated once on sealed states, judged only by the
-benchmark's own success predicate.
+**Few-Shot Agentic Discovery of Manipulation Strategies**
 
-This branch contains only what the paper's experiments use. Sealed results,
-frozen programs, and a script that recomputes every number in the paper are in
-`reproduce/` (start with `python3 reproduce/verify.py`, standard library only;
-see `reproduce/README.md`).
+Yifan Kang, Zihan Wang, Zhiwen Fan, Bangya Liu
 
-## Layout
+A coding agent reads a few robot demonstrations, writes a policy program
+against a fixed perception and action API, refines it over a small number of
+development episodes, and freezes it. The frozen program is then evaluated
+once on held-out episodes, judged only by the benchmark's own success check.
 
-| Path | What it is |
-|---|---|
-| `tools/fair_run.py`, `tools/fair_client.py` | The evaluation harness. `fair_run.py` owns the simulator (or the robot); the agent's program runs in a separate process and reaches the world only through the RPC API in `fair_client.py`. No simulator state, object poses, or success signal crosses that boundary. |
-| `tools/fair_run_robodojo.py`, `heron/robot/robodojo_env.py`, `tools/robodojo/` | The same harness for RoboDojo (Isaac Sim, bimanual), and the adapter installed into a RoboDojo checkout. |
-| `tools/fair_pack.py`, `tools/fair_pack_robodojo.py`, `tools/fair_pack_strip.py`, `tools/strip_pack.py`, `tools/l90abl_build_packs.sh` | Demonstration distillers: keyframes at gripper events, frame strips, end-effector paths, actions, and the reduced (images-only) variants. |
-| `heron/` | Perception and robot library behind the API: RGB-D grounding, deprojection, the LIBERO / robosuite / RoboDojo / Trossen adapters, kinematics, and the VLM client used for grounding and VQA. |
-| `tools/rig_*.py`, `heron/robot/rig_fair.py`, `tools/collect.py`, `tools/depth_server.py`, `tools/spawn_rig_task*.sh` | Real-robot experiments on a bimanual Trossen WidowX AI: the fair API over hardware, pose-card protocol, reset, judge, teleoperation recording, pack building, camera server, and agent launch. |
-| `tools/calibrate_*.py`, `tools/handeye_calibrate.py`, `tools/cross_calibrate.py`, `tools/recalibrate.py`, `tools/measure_table.py`, ... | Rig camera and arm calibration. |
-| `autoresearch/campaigns/` | One folder per experiment: cell lists, the agent-brief generator, run, freeze-and-evaluate scripts, pre-registration. |
-| `autoresearch/tasks/rig_*` | Briefs of the two real-robot tasks. |
-| `autoresearch/FAIR_PROTOCOL.md`, `README.md`, `RIG_PROTOCOL.md` | The worker contract, the coordinator procedure, and the rig protocol. |
-| `baselines/aspire/` | Our drivers for the ASPIRE baseline (NVlabs/ASPIRE at commit `680bad4`): the opus-5 rerun and the planner / threshold ablation. |
+This repository holds the code behind the paper's experiments and every
+frozen program and per-episode result the paper reports.
 
-## Experiments
+---
 
-| Paper | Campaign | Arms |
-|---|---|---|
-| LIBERO-PRO, both perturbation axes, 60 cells (Fig. 2, Table 3) | `c2clean` | K=3, K=0 |
-| LIBERO-PRO unperturbed column | `c2` | K=3 |
-| Development efficiency (Fig. 3) | `c2clean/metrics.py` over the agent transcripts | K=3, K=0 |
-| Verification ablation (Table 2) | `abl_c2` | verification loop removed |
-| LIBERO-90 articulated fixtures | `l90abl` | K=3, images only, K=0 |
-| RoboDojo, ten tasks (Table 1 left) | `rd1` | K=3, K=0 |
-| RoboDojo, twelve tasks (Table 1 right) | `rd2` (`cluster/` = evaluation-box scripts) | K=3, images only, K=0 |
-| ASPIRE rerun and ablations | `baselines/aspire/` | ASPIRE as released, + demonstrations, no grasp planner, no thresholds |
-| Real robot: cube handover, cup inversion | `autoresearch/tasks/rig_handover`, `rig_flip_cup` | K=5 |
+## Reproduce the results
 
-## Running a campaign
+There are three levels, from a one-minute check to a full rerun.
 
-Each campaign runs four steps, one fresh agent per cell:
+| Level | What it does | Needs | Time |
+|---|---|---|---|
+| **1. Check the numbers** | Recomputes every number in the paper from the saved results | Python 3, nothing else | about a minute |
+| **2. Re-evaluate a program** | Runs a frozen program again on its 50 held-out episodes | LIBERO-PRO or RoboDojo, a GPU | minutes to hours per program |
+| **3. Rerun the pipeline** | Builds packs, lets a fresh agent develop a program, evaluates it | Level 2 plus Claude Code | about an hour per cell |
 
-1. **Packs.** Build demonstration packs on the evaluation box, for example
-   `tools/fair_pack.py` for LIBERO or `tools/fair_pack_robodojo.py` for RoboDojo.
-2. **Workspaces.** `autoresearch/campaigns/<c>/build_all.sh` (it calls
-   `mkworker.sh`) writes one workspace per cell with the brief, the pack, the
-   API documentation, and the development seeds.
-3. **Development.** `run.sh` launches a headless Claude Code session per cell
-   (`tools/ar_launch_worker.sh`; authentication through `tools/claude_auth.sh`
-   from `ANTHROPIC_API_KEY` or `CLAUDE_CODE_OAUTH_TOKEN`, in the environment
-   or a git-ignored `.env`). The paper uses model `claude-opus-5`. The agent
-   ends with a declaration naming its frozen program.
-4. **Freeze and evaluate once.** `run_eval.sh` records the program's md5 and
-   runs the sealed evaluation:
+### 1. Check the numbers
 
 ```bash
-# LIBERO-PRO / LIBERO-90
+python3 reproduce/verify.py
+```
+
+The last line should read `50/50 claims reproduced`. The script also checks
+that each saved program matches the hash recorded before its evaluation ran.
+Details are in [`reproduce/README.md`](reproduce/README.md).
+
+### 2. Re-evaluate a frozen program
+
+Every evaluated program is in `reproduce/sealed/<experiment>/<cell>/program.py`,
+next to its per-episode results. After [setup](#setup):
+
+```bash
+# LIBERO-PRO
 env -u PYTHONPATH .venv/bin/python tools/fair_run.py program --seed-episodes \
-  --bddl <bddl> --language "<sentence>" --program packs/<cell>/program.py \
-  --split eval --out results/eval_<cell> --tmp-root <scratch>
+  --bddl <bddl file> --language "<task sentence>" \
+  --program reproduce/sealed/libero_pro_clean/<cell>/program.py \
+  --split eval --out results/eval_<cell>
 
 # RoboDojo
 env -u PYTHONPATH .venv/bin/python tools/fair_run_robodojo.py --task <task> \
-  --program packs/<cell>/program.py --split eval --eval-n 50 --gpu <g> \
-  --out results/eval_<cell>
+  --program reproduce/sealed/robodojo_rd2/<cell>/program.py \
+  --split eval --eval-n 50 --gpu 0 --out results/eval_<cell>
 ```
 
-Development seeds are 51-65; sealed seeds are 1-50 (RoboDojo: the first 50
-official evaluation layouts). A static check refuses any program that reads
-the episode-termination flag, so every program must verify its own progress.
+The BDDL file and sentence for each LIBERO-PRO cell are listed in
+`autoresearch/campaigns/c2clean/eval_manifest.txt`.
+
+### 3. Rerun the whole pipeline
+
+Each experiment lives in `autoresearch/campaigns/<name>/` and runs in four steps:
+
+1. **Build packs**: `tools/fair_pack.py` (LIBERO) or `tools/fair_pack_robodojo.py` (RoboDojo).
+2. **Write workspaces**: `build_all.sh` creates one folder per cell with the task, pack, and API docs.
+3. **Develop**: `run.sh` starts one headless Claude Code session per cell (model `claude-opus-5`).
+   Set `ANTHROPIC_API_KEY` or `CLAUDE_CODE_OAUTH_TOKEN` in the environment or in a git-ignored `.env`.
+4. **Evaluate once**: `run_eval.sh` records the program's hash, then runs the held-out evaluation.
+
+Agents are not deterministic, so a rerun produces different programs and
+slightly different numbers. Levels 1 and 2 reproduce the paper's exact figures.
+
+---
+
+## Where each result comes from
+
+| Result in the paper | Saved results | Experiment folder |
+|---|---|---|
+| LIBERO-PRO, K=3 and K=0 (Fig. 4, Tables 3–4) | `reproduce/sealed/libero_pro_clean` | `c2clean` |
+| LIBERO-PRO, K=1 (Tables 3–4) | `reproduce/sealed/libero_pro_k1` | `c2k1clean` |
+| Unperturbed tasks (98.6%) | `reproduce/sealed/libero_stock` | `c2` |
+| Development efficiency (Fig. 2) | `c2clean/metrics_per_cell.json` | `c2clean` |
+| RoboDojo (Table 2) | `reproduce/sealed/robodojo_rd1`, `robodojo_rd2`, `robodojo_k1` | `rd1`, `rd2`, `k1rd` |
+| Verification ablation (Table 5) | `reproduce/sealed/verification_ablation` | `abl_c2` |
+| LIBERO-90 fixture study (App. C) | `reproduce/sealed/libero90_fixtures` | `l90abl` |
+| ASPIRE rerun and ablations | `reproduce/aspire/` | `baselines/aspire/` |
+| Real robot: cube handover, cup inversion | not simulated | `autoresearch/tasks/rig_handover`, `rig_flip_cup` |
+
+---
+
+## What is in the repository
+
+| Folder | Contents |
+|---|---|
+| `reproduce/` | Saved programs and results, and `verify.py` |
+| `tools/fair_run.py`, `tools/fair_client.py` | The evaluation harness. The program runs in its own process and reaches the simulator only through the API; no object poses or success signal cross that boundary. |
+| `tools/fair_run_robodojo.py`, `tools/robodojo/` | The same harness for RoboDojo, and its installer |
+| `tools/fair_pack*.py`, `tools/strip_pack.py` | Turn demonstrations into packs: keyframes, gripper events, frame strips, trajectories |
+| `heron/` | Perception and robot library behind the API (grounding, depth, simulator and robot adapters) |
+| `autoresearch/campaigns/` | One folder per experiment: task lists, agent briefs, run and evaluation scripts |
+| `tools/rig_*.py`, `tools/calibrate_*.py` | Real-robot harness and camera calibration |
+| `baselines/aspire/` | Our scripts for running the ASPIRE baseline |
+
+---
 
 ## Setup
 
-- Python 3.10, `pip install -e .[dev]`; real robot adds `.[real,record]`.
-- LIBERO-PRO at commit `eafdb80` with its perturbation `bddl_files` and
-  `init_files`; paths are set in `configs/libero.yaml`.
-- RoboDojo at commit `ee67a14`, then `tools/robodojo/install_encore.sh
-  <robodojo-root>`. The installer copies the Encore robot, camera, and sim
-  configs, registers the policy, and applies two patches: gripper joint
-  states in observations, and an `EVAL_NUM` override without which a
-  50-episode evaluation is cut to a task's default of 25.
-- Grounding and VQA: RoboDojo uses `configs/robodojo_ppapi.yaml`
-  (`gemini-3.5-flash` through an OpenAI-compatible relay, `PPAPI_BASE_URL`
-  and `PPAPI_API_KEY` in `.env`); LIBERO uses `configs/libero.yaml`
-  (Gemini Robotics-ER, `GEMINI_API_KEY`).
-- Real robot: two Trossen WidowX AI arms and four RealSense D405 cameras;
-  `configs/rig5090.yaml`, `tools/depth_server.py` for the cameras, and the
-  calibration tools above. Two rig-host files are not yet in this
-  repository: `start_sam3.sh`, which starts the SAM3 segmentation service
-  the rig API calls on port 8772, and `tools/rig_cupstack_ep.sh`, the
-  episode template the rig task briefs point agents to.
+<details>
+<summary>Python and simulators</summary>
 
-## Tests
+- Python 3.10: `pip install -e .[dev]`
+- **LIBERO-PRO** at commit `eafdb80`, with its perturbation `bddl_files` and `init_files`.
+  Set the paths in `configs/libero.yaml`.
+- **RoboDojo** at commit `ee67a14`, then run `tools/robodojo/install_encore.sh <robodojo-root>`.
+  The installer adds our robot and camera configs and two small patches
+  (gripper state in observations, and 50-episode evaluations instead of the default 25).
+
+</details>
+
+<details>
+<summary>Vision-language model keys</summary>
+
+- LIBERO uses Gemini Robotics-ER (`GEMINI_API_KEY`), set in `configs/libero.yaml`.
+- RoboDojo uses `gemini-3.5-flash` through an OpenAI-compatible relay
+  (`PPAPI_BASE_URL`, `PPAPI_API_KEY`), set in `configs/robodojo_ppapi.yaml`.
+
+Put keys in a git-ignored `.env` file.
+
+</details>
+
+<details>
+<summary>Real robot</summary>
+
+Two Trossen WidowX AI arms and four RealSense D405 cameras: `pip install -e .[real,record]`,
+`configs/rig5090.yaml`, and `tools/depth_server.py` for the cameras.
+Two helper files that live on the robot host are not included yet:
+`start_sam3.sh` (the segmentation service) and `tools/rig_cupstack_ep.sh`.
+
+</details>
+
+<details>
+<summary>Tests</summary>
 
 ```bash
 python -m pytest -q
 ```
+
+</details>
