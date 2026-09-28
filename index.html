@@ -82,20 +82,20 @@ footer { margin-top:60px; text-align:center; font-size:13px; color:var(--ink3); 
 
 <section>
   <figure>
-    <video src="media/teaser.mp4?v=6" autoplay muted loop playsinline controls></video>
+    <video src="media/teaser.mp4?v=7" autoplay muted loop playsinline controls></video>
   </figure>
 </section>
 
 <section>
   <h2>Abstract</h2>
-  <p class="abs">Coding agents can now write, run, and debug programs with little human help. Robot tasks, however, are usually specified by a sentence that leaves out how to grasp, in what order to make contact, and what the result should look like, and an agent given only the sentence must find these details by trial and error. We introduce ENCORE, which <b>gives the agent a few demonstrations as evidence to read rather than as training data</b>. A deterministic builder distills each demonstration into a pack of multi-view keyframes, gripper events, frame strips, and the full trajectory. A coding agent studies the pack, writes a policy program against a fixed perception and action API, checks it with its own sensors over a few development rollouts, and freezes it before a sealed evaluation that never reveals the success signal. On LIBERO-PRO, <b>the agent's first program already succeeds in half of the perturbed tasks with demonstrations and in one task without them</b>, and the frozen programs outperform the strongest prior agentic system run with the same language model <b>(96.3% against 89.3%)</b>. On RoboDojo tasks whose instructions leave the goal unstated, <b>no program succeeds without demonstrations</b>. ENCORE also runs on a real bimanual robot, learning cube handover and cup inversion from five demonstrations each.</p>
+  <p class="abs">Coding agents can now write, run, and debug programs with little human help. Robot tasks, however, are usually specified by a sentence that leaves out how to grasp, in what order to make contact, and what the result should look like, and an agent given only the sentence must find these details by trial and error. We introduce ENCORE, which <b>gives the agent a few demonstrations as evidence to read rather than as training data</b>. A deterministic builder distills each demonstration into a pack of multi-view keyframes, gripper events, frame strips, and the full trajectory. A coding agent studies the pack, writes a policy program against a fixed perception and action API, refines it iteratively over a few development rollouts, and freezes it before a sealed evaluation that never reveals the success signal. On LIBERO-PRO, <b>the agent's first program already succeeds in half of the perturbed tasks with demonstrations and in one task without them</b>, and the frozen programs outperform the strongest prior agentic system run with the same language model <b>(96.3% against 89.3%)</b>. On RoboDojo tasks whose instructions leave the goal unstated, <b>no program succeeds without demonstrations</b>. ENCORE also runs on a real bimanual robot, learning cube handover and cup inversion from five demonstrations each.</p>
 </section>
 
 <section>
   <h2>Method</h2>
   <figure>
-    <img src="media/method.png?v=4" alt="ENCORE overview: demonstration pack, agentic coding loop, robot execution">
-    <figcaption>The agent queries the pack, writes a program, checks it with its own sensors, and freezes it.</figcaption>
+    <img src="media/method.png?v=6" alt="ENCORE overview: demonstration pack, agentic coding loop, robot execution">
+    <figcaption>The agent queries the pack, writes a program, refines it iteratively, and freezes it.</figcaption>
   </figure>
 </section>
 
