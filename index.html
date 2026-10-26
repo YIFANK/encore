@@ -29,7 +29,8 @@
   --amber: #a8701a;      /* highlight numbers */
   --sans: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
-  --m: clamp(16px, 3vw, 40px);  /* page margin */
+  --maxw: 1320px;               /* content width cap; rules and bands still run edge to edge */
+  --m: max(clamp(16px, 3vw, 40px), calc((100vw - var(--maxw)) / 2));  /* page margin */
   --bar: 40px;
 }
 * { box-sizing: border-box; }
