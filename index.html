@@ -85,10 +85,10 @@ section { scroll-margin-top: var(--bar); }
 .cap span:last-child { text-transform: uppercase; letter-spacing: 0.06em; }
 
 /* highlights */
-.hl { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); border-bottom: 1.5px solid var(--ink); }
-.hl .vid { padding: clamp(12px, 1.6vw, 24px) var(--g) clamp(12px, 1.6vw, 24px) var(--m); border-right: 1.5px solid var(--ink); }
+.hl { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); border-bottom: 1.5px solid var(--ink); padding-inline: calc(var(--m) - var(--g)); }
+.hl .vid { padding: clamp(12px, 1.6vw, 24px) var(--g); border-right: 1.5px solid var(--ink); }
 .hl .vid video { width: 100%; background: #000; }
-.hl .side { padding: clamp(12px, 1.6vw, 24px) var(--m) clamp(12px, 1.6vw, 24px) var(--g); display: flex; flex-direction: column; }
+.hl .side { padding: clamp(12px, 1.6vw, 24px) var(--g); display: flex; flex-direction: column; }
 .hl .side h2 { font-weight: 400; font-size: clamp(48px, 6.4vw, 96px); letter-spacing: -0.045em; line-height: 0.95; margin: 0 0 6px; }
 .hl .side .sub { font-size: 15px; color: var(--muted); margin: 0 0 14px; }
 .stat { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: baseline; gap: 14px; border-top: 1px solid var(--ink); padding: 12px 0; }
